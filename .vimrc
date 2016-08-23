@@ -109,6 +109,9 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'git://github.com/tpope/vim-git.git'
 " /*}}}*/
 
+"rust-lang
+Plugin 'rust-lang/rust.vim'
+
 "taghighlist
 Plugin 'https://github.com/vim-scripts/TagHighlight'
 
@@ -170,6 +173,8 @@ let Tlist_Use_Right_Window = 1 "show Tlist on the right
 let Tlist_Exit_OnlyWindow = 1  "when exit the last window, Tlist exit
 inoremap <F12> <Esc>:TlistToggle<CR>
 map <F12> <Esc>:TlistToggle<CR>
+inoremap <F9> <Esc>:UpdateTypesFile<CR>
+map <F9> <Esc>:UpdateTypesFile<CR>
 
 
 autocmd FileType go compiler go
