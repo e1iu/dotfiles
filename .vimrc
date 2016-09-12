@@ -124,9 +124,6 @@ inoremap <F8> <Esc>:TagbarToggle<CR>
 map <F8> <Esc>:TagbarToggle<CR>
 "/*}}}*/
 
-" rust-lang
-Plugin 'rust-lang/rust.vim'
-
 call vundle#end()
 filetype plugin indent on
 
