@@ -15,6 +15,9 @@ inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <F3> <Esc>:NERDTreeToggle<CR>
 "
 
+"c.vim
+Plugin 'git://github.com/vim-scripts/c.vim.git'
+
 "sml
 Plugin 'https://github.com/oinksoft/vim-sml.git'
 
@@ -63,6 +66,7 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+"let g:syntastic_c_checkers = ['syntastic-checkers-c']
 
 "YCM  /*{{{*/
 "Plugin 'git://github.com/Valloric/YouCompleteMe.git'
@@ -150,16 +154,16 @@ filetype plugin indent on
 "Plugin end ==============================================================
 
 
-set ts=2 "set the tab width is 2
-set expandtab
 set nu! "open the line num
-set shiftwidth=2
-set cindent
-set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
-set hlsearch       "search highlight
-set nobackup "close the backup
-syntax enable
-syntax on
+set tabstop=2  "set the tab width
+set shiftwidth=2 "set the indent
+set expandtab "use space instead tab
+
+"set cindent
+"set cinoptions={0,1s,t0,n-2,p2s,(03s,=.5s,>1s,=1s,:1s
+
+set hlsearch        "search highlight
+set nobackup        "close the backup
 
 
 " fold mode
