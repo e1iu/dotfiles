@@ -14,9 +14,15 @@ Plugin 'git://github.com/scrooloose/nerdtree.git'
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <F3> <Esc>:NERDTreeToggle<CR>
 "
+inoremap 1 <Esc>:NERDTreeToggle<CR>
+nnoremap 1 <Esc>:NERDTreeToggle<CR>
+
+
+"vim-clang
+Plugin 'https://github.com/justmao945/vim-clang.git'
 
 "c.vim
-Plugin 'git://github.com/vim-scripts/c.vim.git'
+"Plugin 'git://github.com/vim-scripts/c.vim.git'
 
 "sml
 Plugin 'https://github.com/oinksoft/vim-sml.git'
