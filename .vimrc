@@ -63,16 +63,15 @@ set laststatus=2
 
 
 "syntastice
-Plugin 'git://github.com/scrooloose/syntastic.git'
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"Plugin 'git://github.com/scrooloose/syntastic.git'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-"let g:syntastic_c_checkers = ['syntastic-checkers-c']
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
 
 "YCM  /*{{{*/
 "Plugin 'git://github.com/Valloric/YouCompleteMe.git'
@@ -137,21 +136,10 @@ inoremap <F9> <Esc>:UpdateTypesFile<CR>
 nnoremap <F9> <Esc>:UpdateTypesFile<CR>
 "
 
-"taglist
-Plugin 'https://github.com/vim-scripts/taglist.vim'
-inoremap <F12> <Esc>:TlistToggle<CR>
-nnoremap <F12> <Esc>:TlistToggle<CR>
-let Tlist_Ctags_Cmd='/usr/bin/ctags'
-let Tlist_Auto_Open = 0
-let Tlist_Show_One_File = 1
-let Tlist_Use_Right_Window = 1 "show Tlist on the right
-let Tlist_Exit_OnlyWindow = 1  "when exit the last window, Tlist exit
-"
-
 "tagbar
 Plugin 'https://github.com/majutsushi/tagbar'
-inoremap <F8> <Esc>:TagbarToggle<CR>
-nnoremap <F8> <Esc>:TagbarToggle<CR>
+inoremap <F12> <Esc>:TagbarToggle<CR>
+nnoremap <F12> <Esc>:TagbarToggle<CR>
 "
 
 call vundle#end()
@@ -187,17 +175,4 @@ syntax on
 
 set incsearch
 
-" go 
-if exists("g:did_load_filetypes")
-    filetype off
-    filetype plugin indent off
-endif
-set runtimepath+=/usr/local/go/misc/vim
-filetype plugin indent on
-filetype plugin on
-syntax on
-
 inoremap jj <Esc>
-
-
-autocmd FileType go compiler go
