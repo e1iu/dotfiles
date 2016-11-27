@@ -169,10 +169,13 @@ set t_Co=256
 set background=dark
 colorscheme molokai     
 
+set cc=80
+
 " syntax
 syntax enable
 syntax on
 
 set incsearch
 
-inoremap jj <Esc>
+" use jj map to Esc in INSERT mode.
+inoremap jk <Esc>
