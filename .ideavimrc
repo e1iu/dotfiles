@@ -1,4 +1,6 @@
-inoremap jj <Esc>
+inoremap jk <Esc>
+nnoremap j jzz
+nnoremap k kzz
 set tabstop=2
 set shiftwidth=2
 set expandtab

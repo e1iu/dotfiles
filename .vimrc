@@ -132,8 +132,6 @@ Plugin 'git://github.com/tpope/vim-git.git'
 
 "taghighlist
 Plugin 'https://github.com/vim-scripts/TagHighlight'
-inoremap <F9> <Esc>:UpdateTypesFile<CR>
-nnoremap <F9> <Esc>:UpdateTypesFile<CR>
 "
 
 "tagbar
@@ -179,3 +177,6 @@ set incsearch
 
 " use jj map to Esc in INSERT mode.
 inoremap jk <Esc>
+
+nnoremap j jzz
+nnoremap k kzz
