@@ -1,3 +1,7 @@
 [user]
 	name = qc1iu
 	email = 416521842@qq.com
+
+
+[alias]
+  plog = log --graph --full-history --all --pretty=format:\"%Cred%h%x09%C(cyan)%d%x20%Creset%s%Cblue<%C(yellow)%aN%Cblue>\"
