@@ -9,6 +9,9 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" javascript
+Plugin 'https://github.com/pangloss/vim-javascript.git'
+
 " Nerdtree
 Plugin 'git://github.com/scrooloose/nerdtree.git'
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
