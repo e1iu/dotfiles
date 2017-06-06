@@ -11,3 +11,7 @@
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+
+(require 'color-theme)
+(color-theme-initialize)
+(color-theme-gnome2)
