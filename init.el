@@ -1,3 +1,5 @@
+;; INSTALL PACKAGES
+;;------------------------------------------------------------------------------
 (require 'package) ;; You might already have this line
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -37,3 +39,9 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-gnome2)
+
+
+;; BASIC CUSTOMIZATION
+;;---------------------------------------------
+(setq inhibit-startup-message t) ;; hide the startup message
+(global-linum-mode t) ;; enable line numbers globally
