@@ -29,7 +29,6 @@
 (mapc 'installPackage pythonPackages)
 (mapc 'installPackage commonPackage)
 
-
 (require 'auto-complete-config)
 (ac-config-default)
 
@@ -40,8 +39,17 @@
 (color-theme-initialize)
 (color-theme-gnome2)
 
+;; column 80 highlight, TAB highlight
+(require 'whitespace)
+(setq whitespace-style '(face tabs lines-tail trailing))
+(global-whitespace-mode t)
+
 
 ;; BASIC CUSTOMIZATION
 ;;---------------------------------------------
 (setq inhibit-startup-message t) ;; hide the startup message
 (global-linum-mode t) ;; enable line numbers globally
+(column-number-mode t) ;; display column in bottom
+
+
+(setq-default indent-tabs-mode nil) ;; using space instead of TAB
