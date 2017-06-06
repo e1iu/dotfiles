@@ -132,3 +132,15 @@ alias cd='cdls'
 # for enable the ch in Emacs
 alias emacs="export LC_CTYPE=zh_CN.UTF-8;emacs";
 
+
+
+alias ,='cd ..'
+alias ,,='cd ../..'
+alias ,,,='cd ../../..'
+alias ,,,,='cd ../../../..'
+alias ,,,,,='cd ../../../../..'
+alias ,,,,,,='cd ../../../../../..'
+alias ,,,,,,,='cd ../../../../../../..'
+alias ,,,,,,,,='cd ../../../../../../../..'
+alias ,,,,,,,,,='cd ../../../../../../../../..'
+alias ,,,,,,,,,,='cd ../../../../../../../../../..'
