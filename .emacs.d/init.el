@@ -6,6 +6,15 @@
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 (package-initialize) ;; You might already have this line
 
+(defvar pythonPackages
+  '(py-autopep8)
+  )
+
+(mapc #'(lambda (package)
+          (unless (package-installed-p package)
+            (package-install package)))
+      pythonPackages)
+
 (require 'auto-complete-config)
 (ac-config-default)
 
