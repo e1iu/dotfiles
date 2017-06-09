@@ -1,13 +1,13 @@
 ;; INSTALL PACKAGES
 ;;------------------------------------------------------------------------------
 (require 'package) ;; You might already have this line
-(add-to-list 'package-archives
-             '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/"))
+(setq package-archives
+             '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 
 (when (< emacs-major-version 24)
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives
-               '("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+               '("gnu"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
 
 
 (package-initialize) ;; You might already have this line
