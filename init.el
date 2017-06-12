@@ -62,6 +62,7 @@
 (setq inhibit-startup-message t) ;; hide the startup message
 (global-linum-mode t) ;; enable line numbers globally
 (column-number-mode t) ;; display column in bottom
+(define-key global-map [C-return] 'set-mark-command)
 
 
 (setq-default indent-tabs-mode nil) ;; using space instead of TAB
