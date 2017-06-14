@@ -26,39 +26,6 @@ if [ -d /etc/profile.d ]; then
   unset i
 fi
 
-# base
-export APPLICATIONS_HOME=/usr/local/applications
-
-#java
-export JAVA_HOME=$APPLICATIONS_HOME/java
-export PATH=$PATH:$JAVA_HOME/bin
-
-#gradle
-export GRADLE_HOME=$APPLICATIONS_HOME/gradle
-export PATH=$PATH:$GRADLE_HOME/bin
-
-#clang
-export CLANG_HOME=$APPLICATIONS_HOME/clang
-export PATH=$PATH:$CLANG_HOME/bin
-
-#cmake
-export CMAKE_HOME=$APPLICATIONS_HOME/clion-2017.1.1/bin/cmake
-export PATH=$PATH:$CMAKE_HOME/bin
-
-
-#hexo
-export HEXO_HOME=$APPLICATIONS_HOME/node_modules/hexo
-export PATH=$PATH:$HEXO_HOME/bin
-
-
-#node.js
-export NODE_HOME=$APPLICATIONS_HOME/node-v6.9.4-linux-x64
-export PATH=$PATH:$NODE_HOME/bin
-
-
-#mongoDB
-export MONGODB_HOME=$APPLICATIONS_HOME/mongodb
-export PATH=$PATH:$MONGODB_HOME/bin
-
-#NGROK (for onedrive)
-export NGROK=$APPLICATIONS_HOME/ngrok
+if [ -f ~/.bashrc ]; then
+  . ~/.bashrc
+fi
