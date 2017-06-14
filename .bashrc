@@ -120,15 +120,13 @@ fi
 
 
 ################### SOME ALIAS ##############
-
-
 # hack cd
 cdls() {
   if [ ! ${1} ]; then
     cdls ~/;
   else
     cd "${1}";
-    ls -l;
+    ls -lh;
   fi
 }
 alias cd='cdls'

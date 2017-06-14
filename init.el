@@ -12,13 +12,14 @@
 
 (package-initialize) ;; You might already have this line
 
-
-(defun my-packages-reset()
-  "Reset package manifest to the defined set."
-  (interactive)
-  (package-refresh-contents))
-
-(my-packages-reset)
+;; There is no need refresh every time.
+;;
+;;(defun my-packages-reset()
+;;  "Reset package manifest to the defined set."
+;;  (interactive)
+;;  (package-refresh-contents))
+;;
+;;(my-packages-reset)
 
 
 (defun installPackage (p)
