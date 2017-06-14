@@ -1,4 +1,4 @@
-# /etc/profile: system-wide .profile file for the Bourne shell (sh(1))
+# user only. profile file for the Bourne shell (sh(1))
 # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
 
 if [ "$PS1" ]; then
@@ -59,3 +59,6 @@ export PATH=$PATH:$NODE_HOME/bin
 #mongoDB
 export MONGODB_HOME=$APPLICATIONS_HOME/mongodb
 export PATH=$PATH:$MONGODB_HOME/bin
+
+#NGROK (for onedrive)
+export NGROK=$APPLICATIONS_HOME/ngrok
