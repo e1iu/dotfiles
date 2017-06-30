@@ -36,11 +36,24 @@
   '(neotree
     auto-complete
     markdown-mode
-    color-theme)
+    color-theme
+    sr-speedbar)
   )
 
 (mapc 'installPackage pythonPackages)
 (mapc 'installPackage commonPackage)
+
+(require 'sr-speedbar)
+(setq sr-speedbar-right-side nil)
+(global-set-key [f12] 'sr-speedbar-toggle)
+;; this can be replace with:
+
+;(defun srSpeedbarSwitcher()
+;  (interactive)
+;  (if (sr-speedbar-exist-p)
+;      (sr-speedbar-close)
+;    (sr-speedbar-open)))
+;(global-set-key [f12] 'srSpeedbarSwitcher)
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -51,6 +64,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (color-theme-gnome2)
+(global-set-key [f9] 'color-theme-gnome2)
 
 ;; column 80 highlight, TAB highlight
 (require 'whitespace)
@@ -67,3 +81,8 @@
 
 
 (setq-default indent-tabs-mode nil) ;; using space instead of TAB
+
+;;(set-default-font "Dejavu Sans Mono 10")
+;;(set-fontset-font "fontset-default" 'unicode"WenQuanYi Bitmap Song 12") ;;for linux
+;;(set-fontset-font "fontset-default" 'unicode "宋体 12") ;; for windows
+
