@@ -134,7 +134,7 @@ alias cd='cdls'
 
 # for enable the ch in Emacs
 alias emacszh="export LC_CTYPE=zh_CN.UTF-8;/usr/bin/emacs";
-alias em="emacs -nw";
+alias es="emacs -nw";
 
 
 

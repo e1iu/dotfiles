@@ -44,7 +44,7 @@
 (mapc 'installPackage commonPackage)
 
 (require 'sr-speedbar)
-(setq sr-speedbar-right-side nil)
+;(setq sr-speedbar-right-side nil)
 (global-set-key [f12] 'sr-speedbar-toggle)
 ;; this can be replace with:
 
