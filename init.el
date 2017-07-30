@@ -31,6 +31,10 @@
   '(py-autopep8)
   )
 
+(defvar javascriptPackages
+  '(js2-mode)
+  )
+
 
 (defvar commonPackage
   '(neotree
@@ -42,6 +46,7 @@
 
 (mapc 'installPackage pythonPackages)
 (mapc 'installPackage commonPackage)
+(mapc 'installPackage javascriptPackages)
 
 (require 'sr-speedbar)
 ;(setq sr-speedbar-right-side nil)
@@ -82,6 +87,8 @@
 
 (setq-default indent-tabs-mode nil) ;; using space instead of TAB
 
+
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 ;;(set-default-font "Dejavu Sans Mono 10")
 ;;(set-fontset-font "fontset-default" 'unicode"WenQuanYi Bitmap Song 12") ;;for linux
 ;;(set-fontset-font "fontset-default" 'unicode "宋体 12") ;; for windows

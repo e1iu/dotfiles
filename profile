@@ -52,7 +52,7 @@ export PATH=$PATH:$HEXO_HOME/bin
 
 
 #node.js
-export NODE_HOME=$APPLICATIONS_HOME/node-v6.9.4-linux-x64
+export NODE_HOME=$APPLICATIONS_HOME/nodejs
 export PATH=$PATH:$NODE_HOME/bin
 
 
