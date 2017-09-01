@@ -8,7 +8,7 @@
 [core]
   editor = vim
   pager = less -x4
-  autocrlf = input
+  autocrlf = false
   safecrlf = true
 [alias]
   plog = log --graph --full-history --all --pretty=format:\"%Cred%h%x09%C(cyan)%d%x20%Creset%s%Cblue<%C(yellow)%aN%Cblue>\"
