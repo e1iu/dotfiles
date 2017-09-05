@@ -102,3 +102,8 @@
         (t (self-insert-command (or arg 1)))))
 (global-set-key "%" 'match-paren)
 
+
+(show-paren-mode)
+(winner-mode)
+(delete-selection-mode)
+(setq make-backup-file nil)
