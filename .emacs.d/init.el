@@ -74,7 +74,7 @@
 ;; column 80 highlight, TAB highlight
 (require 'whitespace)
 (setq whitespace-style '(face tabs lines-tail trailing))
-(global-whitespace-mode t)
+;;(global-whitespace-mode t)
 
 
 ;; BASIC CUSTOMIZATION
