@@ -107,3 +107,4 @@
 (winner-mode)
 (delete-selection-mode)
 (setq make-backup-file nil)
+(setq save-abbrevs nil)
