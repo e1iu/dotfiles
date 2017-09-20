@@ -154,3 +154,7 @@ alias cdg='cd ~/Github'
 
 #NGROK (for onedrive)
 export NGROK=$APPLICATIONS_HOME/ngrok
+
+# ocaml
+export OCAML=/home/qc1iu/.opam/4.05.0/
+export PATH=$PATH:$OCAML/bin
