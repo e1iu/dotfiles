@@ -122,10 +122,10 @@ fi
 ################### SOME ALIAS ##############
 # hack cd
 cdls() {
-  if [ ! ${1} ]; then
+  if [ ! $1 ]; then
     cdls ~/;
   else
-    cd "${1}";
+    cd $1;
     ls -lh;
   fi
 }
@@ -158,3 +158,13 @@ export NGROK=$APPLICATIONS_HOME/ngrok
 # ocaml
 export OCAML=/home/qc1iu/.opam/4.05.0/
 export PATH=$PATH:$OCAML/bin
+
+# some useful scripts
+
+c() {
+  if [ $# -eq 0 ]; then
+    tee >(content="$(cat)"; echo -n "$content" | xsel -b)
+  else
+    "$@" | tee >(content="$(cat)"; echo -n "$content" | xsel -b)
+  fi
+}
