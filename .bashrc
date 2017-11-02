@@ -138,7 +138,7 @@ alias es="emacs -nw";
 
 
 
-alias ,='cd ..'
+alias q='cd ..'
 alias ,,='cd ../..'
 alias ,,,='cd ../../..'
 alias ,,,,='cd ../../../..'
