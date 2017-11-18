@@ -41,7 +41,9 @@
     auto-complete
     markdown-mode
     color-theme
-    sr-speedbar)
+    sr-speedbar
+    tuareg
+    find-file-in-project)
   )
 
 (mapc 'installPackage pythonPackages)
@@ -49,16 +51,11 @@
 (mapc 'installPackage javascriptPackages)
 
 (require 'sr-speedbar)
-;(setq sr-speedbar-right-side nil)
+;;(setq sr-speedbar-right-side nil)
 (global-set-key [f12] 'sr-speedbar-toggle)
-;; this can be replace with:
 
-;(defun srSpeedbarSwitcher()
-;  (interactive)
-;  (if (sr-speedbar-exist-p)
-;      (sr-speedbar-close)
-;    (sr-speedbar-open)))
-;(global-set-key [f12] 'srSpeedbarSwitcher)
+(require 'find-file-in-project)
+(global-set-key (kbd "M-p") 'find-file-in-project)
 
 (require 'auto-complete-config)
 (ac-config-default)
@@ -104,6 +101,7 @@
 
 
 (show-paren-mode)
+(electric-pair-mode)
 (winner-mode)
 (delete-selection-mode)
 (setq make-backup-file nil)
