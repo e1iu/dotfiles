@@ -27,28 +27,20 @@
     (package-install p)))
 
 
-(defvar pythonPackages
-  '(py-autopep8)
-  )
-
-(defvar javascriptPackages
-  '(js2-mode)
-  )
-
-
 (defvar commonPackage
   '(neotree
     auto-complete
-    markdown-mode
     color-theme
     sr-speedbar
-    tuareg
-    find-file-in-project)
+    find-file-in-project
+    markdown-mode ; markdown
+    tuareg ; ocaml
+    py-autopep8 ; python
+    ;js2-mode ; javascript
+    )
   )
 
-(mapc 'installPackage pythonPackages)
 (mapc 'installPackage commonPackage)
-(mapc 'installPackage javascriptPackages)
 
 (require 'sr-speedbar)
 ;;(setq sr-speedbar-right-side nil)
@@ -58,6 +50,8 @@
 (global-set-key (kbd "M-p") 'find-file-in-project)
 
 (require 'auto-complete-config)
+(define-key ac-completing-map [return] nil)
+(define-key ac-completing-map "\r" nil)
 (ac-config-default)
 
 (require 'neotree)
