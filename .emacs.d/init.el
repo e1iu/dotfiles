@@ -62,10 +62,11 @@
 (color-theme-gnome2)
 (global-set-key [f9] 'color-theme-gnome2)
 
-;; column 80 highlight, TAB highlight
+;; column 80 highlight
 (require 'whitespace)
-(setq whitespace-style '(face tabs lines-tail trailing))
-;;(global-whitespace-mode t)
+;;(setq whitespace-style '(face tabs lines-tail trailing))
+(setq whitespace-style '(face lines-tail)) ;; only highlight column 80
+(global-whitespace-mode t)
 
 
 ;; BASIC CUSTOMIZATION
@@ -73,6 +74,7 @@
 (setq inhibit-startup-message t) ;; hide the startup message
 (global-linum-mode t) ;; enable line numbers globally
 (column-number-mode t) ;; display column in bottom
+(tool-bar-mode -1) ;; close tool-bar
 (define-key global-map [C-return] 'set-mark-command)
 
 
