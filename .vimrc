@@ -1,6 +1,7 @@
 set nocompatible
 filetype off
 "filetype plugin indent on
+set rtp+=~/.vim
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
