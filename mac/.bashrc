@@ -139,7 +139,4 @@ c() {
 }
 
 
-#########################
-
-export OPAM_HOME=/Users/qc1iu/.opam/system/
-export PATH=$PATH:$OPAM_HOME/bin
+eval `opam config env`
