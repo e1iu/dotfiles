@@ -90,12 +90,15 @@ alias la='ls -A'
 alias l='ls -CF'
 # hack cd
 cdls() {
+  SAVEIFS=$IFS;
+  IFS=$(echo -en "\n\b");
   if [ ! $1 ]; then
     cdls ~/;
   else
     cd $1;
     ls -lh;
   fi
+  IFS=$SAVEIFS;
 }
 alias cd='cdls'
 
@@ -125,7 +128,6 @@ alias cdg='cd ~/Github'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-
 # some useful scripts
 
 c() {
@@ -135,3 +137,9 @@ c() {
     "$@" | tee >(content="$(cat)"; echo -n "$content" | pbcopy)
   fi
 }
+
+
+#########################
+
+export OPAM_HOME=/Users/qc1iu/.opam/system/
+export PATH=$PATH:$OPAM_HOME/bin
