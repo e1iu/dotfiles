@@ -52,7 +52,7 @@ case "$TERM" in
 esac
 
 # enable color support of ls and also add handy aliases
-LSCOLORS=gxfxcxdxbxegedabagacad
+export LSCOLORS=gxfxcxdxbxegedabagacad
 case "`uname`" in
   Darwin*)
     alias ls='ls -G'
@@ -72,10 +72,6 @@ alias egrep='egrep --color=auto'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -143,16 +139,7 @@ alias ,,,,,,,='cd ../../../../../../..'
 alias ,,,,,,,,='cd ../../../../../../../..'
 alias ,,,,,,,,,='cd ../../../../../../../../..'
 alias ,,,,,,,,,,='cd ../../../../../../../../../..'
-
-
 alias cdg='cd ~/Github'
-
-#NGROK (for onedrive)
-export NGROK=$APPLICATIONS_HOME/ngrok
-
-# ocaml
-export OCAML=/home/qc1iu/.opam/4.05.0/
-export PATH=$PATH:$OCAML/bin
 
 # some useful scripts
 copy() {
@@ -174,3 +161,5 @@ c() {
     "$@" | tee >(content="$(cat)"; echo -n "$content" | copy)
   fi
 }
+
+eval `opam config env`
