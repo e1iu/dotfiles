@@ -23,13 +23,6 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
   xterm-color|*-256color) color_prompt=yes;;
@@ -53,6 +46,11 @@ esac
 
 # enable color support of ls and also add handy aliases
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# Alias definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_aliases, instead of adding them here directly.
+# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 case "`uname`" in
   Darwin*)
     alias ls='ls -G'
@@ -73,11 +71,39 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
+cdls() {
+  SAVEIFS=$IFS;
+  IFS=$(echo -en "\n\b");
+  if [ ! $1 ]; then
+    cdls ~/;
+  else
+    cd $1;
+    ls -lh;
+  fi
+  IFS=$SAVEIFS;
+}
+alias cd='cdls'
 
+# for enable the ch in Emacs
+alias emacszh="export LC_CTYPE=zh_CN.UTF-8;/usr/bin/emacs";
+alias es="emacs -nw";
+
+alias q='cd ..'
+alias ,,='cd ../..'
+alias ,,,='cd ../../..'
+alias ,,,,='cd ../../../..'
+alias ,,,,,='cd ../../../../..'
+alias ,,,,,,='cd ../../../../../..'
+alias ,,,,,,,='cd ../../../../../../..'
+alias ,,,,,,,,='cd ../../../../../../../..'
+alias ,,,,,,,,,='cd ../../../../../../../../..'
+alias ,,,,,,,,,,='cd ../../../../../../../../../..'
+alias cdg='cd ~/Github'
+
+
+if [ -f ~/.bash_aliases ]; then
+  . ~/.bash_aliases
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -102,46 +128,7 @@ case "`uname`" in
 esac
 
 
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
-
-
-################### SOME ALIAS ##############
-# hack cd
-cdls() {
-  SAVEIFS=$IFS;
-  IFS=$(echo -en "\n\b");
-  if [ ! $1 ]; then
-    cdls ~/;
-  else
-    cd $1;
-    ls -lh;
-  fi
-  IFS=$SAVEIFS;
-}
-alias cd='cdls'
-
-
-# for enable the ch in Emacs
-alias emacszh="export LC_CTYPE=zh_CN.UTF-8;/usr/bin/emacs";
-alias es="emacs -nw";
-
-
-
-alias q='cd ..'
-alias ,,='cd ../..'
-alias ,,,='cd ../../..'
-alias ,,,,='cd ../../../..'
-alias ,,,,,='cd ../../../../..'
-alias ,,,,,,='cd ../../../../../..'
-alias ,,,,,,,='cd ../../../../../../..'
-alias ,,,,,,,,='cd ../../../../../../../..'
-alias ,,,,,,,,,='cd ../../../../../../../../..'
-alias ,,,,,,,,,,='cd ../../../../../../../../../..'
-alias cdg='cd ~/Github'
-
-# some useful scripts
+################### some useful scripts ###################
 copy() {
   case "`uname`" in
     Darwin*)
