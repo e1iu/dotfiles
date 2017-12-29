@@ -3,3 +3,4 @@
 .emacs.d/abbrev_defs
 .emacs.d/auto-save-list/
 
+.vim/bundle/
