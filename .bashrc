@@ -78,7 +78,7 @@ cdls() {
   if [ ! "$1" ]; then
     cdls ~/;
   else
-    cd "$1" || exit;
+    cd "$1" || return;
     ls -lh;
   fi
   IFS=$SAVEIFS;
