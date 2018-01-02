@@ -15,19 +15,19 @@ fi
 
 
 if [ "$key" == "" ]; then
-  cat ${prefix}${out} | while read LINE;  
+  cat ${prefix}${out} | while read -r LINE;
 do
-  echo ${LINE} | awk '{print $1}'
+  echo "${LINE}" | awk '{print $1}'
 done
 exit
 fi
 
 if [ -f ${prefix}${out} ]; then
-  cat ${prefix}${out} | while read LINE;  
+  cat ${prefix}${out} | while read -r LINE;
 do
-  c=`echo ${LINE} | awk '{print $1}'`
+  c=$(echo "${LINE}" | awk '{print $1}')
   if [ "$key" == "$c" ]; then
-    echo ${LINE} | awk '{print $2 "\t" $3}'
+    echo "${LINE}" | awk '{print $2 "\t" $3}'
     break
   fi
 done
