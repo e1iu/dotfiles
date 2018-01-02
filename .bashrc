@@ -1,3 +1,4 @@
+#! /bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -38,7 +39,7 @@ unset color_prompt force_color_prompt
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
   xterm*|rxvt*)
-    PS1="\[\e]0;\u@\h: \w\a\]$PS1"
+    PS1="\\[\\e]0;\\u@\\h: \\w\\a\\]$PS1"
     ;;
   *)
     ;;
@@ -51,7 +52,7 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
-case "`uname`" in
+case "$(uname)" in
   Darwin*)
     alias ls='ls -G'
     ;;
@@ -73,11 +74,11 @@ alias l='ls -CF'
 
 cdls() {
   SAVEIFS=$IFS;
-  IFS=$(echo -en "\n\b");
-  if [ ! $1 ]; then
+  IFS=$(echo -en "\\n\\b");
+  if [ ! "$1" ]; then
     cdls ~/;
   else
-    cd $1;
+    cd "$1" || exit;
     ls -lh;
   fi
   IFS=$SAVEIFS;
@@ -108,7 +109,7 @@ fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-case "`uname`" in
+case "$(uname)" in
   Darwin*)
     if [ -f /usr/local/Cellar/bash-completion/1.3_3/etc/profile.d/bash_completion.sh ]; then
       . /usr/local/Cellar/bash-completion/1.3_3/etc/profile.d/bash_completion.sh
@@ -130,7 +131,7 @@ esac
 
 ################### some useful scripts ###################
 copy() {
-  case "`uname`" in
+  case "$(uname)" in
     Darwin*)
       pbcopy ;;
     Linux*)
@@ -149,4 +150,4 @@ c() {
   fi
 }
 
-eval `opam config env`
+eval "$(opam config env)"
