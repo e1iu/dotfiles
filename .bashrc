@@ -99,8 +99,7 @@ alias ,,,,,,,='cd ../../../../../../..'
 alias ,,,,,,,,='cd ../../../../../../../..'
 alias ,,,,,,,,,='cd ../../../../../../../../..'
 alias ,,,,,,,,,,='cd ../../../../../../../../../..'
-alias cdg='cd ~/Github'
-
+alias q!='exit'
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
