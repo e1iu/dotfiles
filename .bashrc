@@ -150,3 +150,11 @@ c() {
 }
 
 eval "$(opam config env)"
+
+JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8.0_162)
+JAVA_9_HOME=$(/usr/libexec/java_home -v 9.0.1)
+
+export JAVA_HOME=$JAVA_8_HOME
+alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
+alias jdk9="export JAVA_HOME=$JAVA_9_HOME"
+PATH=$PATH:$JAVA_HOME
