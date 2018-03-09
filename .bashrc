@@ -100,6 +100,7 @@ alias ,,,,,,,,='cd ../../../../../../../..'
 alias ,,,,,,,,,='cd ../../../../../../../../..'
 alias ,,,,,,,,,,='cd ../../../../../../../../../..'
 alias q!='exit'
+alias p='cd -'
 
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
