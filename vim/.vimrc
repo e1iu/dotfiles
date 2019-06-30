@@ -80,6 +80,7 @@ filetype plugin indent on
 set nu!                       "open the line num
 set tabstop=2                 "set the tab width
 set shiftwidth=2              "set the indent
+set softtabstop=2
 set expandtab                 "use space instead tab
 set cursorline
 set hlsearch                  "search highlight
@@ -91,12 +92,12 @@ set t_Co=256
 set background=dark
 colorscheme molokai     
 set encoding=utf-8
-set cc=80
+"set cc=80
 " syntax
 syntax enable
 syntax on
 set incsearch
-" use jj map to Esc in INSERT mode.
+" use jk map to Esc in INSERT mode.
 inoremap jk <Esc>
 "nnoremap j jzz
 "nnoremap k kzz

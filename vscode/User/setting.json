@@ -1,0 +1,17 @@
+{
+    "editor.suggestSelection": "first",
+    "editor.fontSize": 16,
+    "C_Cpp.updateChannel": "Insiders",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "workbench.colorTheme": "Monokai",
+    "vim.insertModeKeyBindings": [
+        {"before":["j", "k"],"after":["<Esc>"]}
+    ],
+    "terminal.integrated.rightClickBehavior": "selectWord",
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "editor.renderWhitespace": "none",
+    "editor.minimap.enabled": true,
+    "editor.renderControlCharacters": false,
+    "breadcrumbs.enabled": true,
+    "workbench.sideBar.location": "left"
+}

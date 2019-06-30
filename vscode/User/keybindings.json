@@ -1,0 +1,38 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFindWidget",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "f3",
+        "command": "-workbench.action.terminal.findNext",
+        "when": "terminalFindWidgetFocused"
+    },
+    {
+        "key": "f3",
+        "command": "-workbench.action.terminal.findNextTerminalFocus",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "f11",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+v",
+        "command": "-workbench.action.terminal.paste",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+c",
+        "command":"-workbench.action.terminal.copySelection",
+        "when":"terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+c",
+        "command":"workbench.action.terminal.copySelection",
+        "when": "terminalFocus"
+    }
+]

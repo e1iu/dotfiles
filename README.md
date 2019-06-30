@@ -1,13 +1,24 @@
 # dotfiles
 my dotfiles
 
+### base
+.bashrc
+.bash_profile
 
 ### vim
-molokai.vim
+.vimrc
+.vim/
 
 ### JetBrain
-clion-settings.jar
-intellij-settings.jar
+TODO
 
 ### vscode
+settings.json
 keybindings.json
+
+### git
+.gitignore
+.gitconfig
+
+### emacs
+.emacs.d/
