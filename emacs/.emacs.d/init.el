@@ -20,6 +20,8 @@
 ;;  (package-refresh-contents))
 ;;
 ;;(my-packages-reset)
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'monokai' t)
 
 
 (defun installPackage (p)
@@ -30,7 +32,6 @@
 (defvar commonPackage
   '(neotree
     auto-complete
-    color-theme
     sr-speedbar
     find-file-in-project
     markdown-mode ; markdown
@@ -57,10 +58,10 @@
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
 
-(require 'color-theme)
-(color-theme-initialize)
-(color-theme-gnome2)
-(global-set-key [f9] 'color-theme-gnome2)
+;(require 'color-theme)
+;(color-theme-initialize)
+;(color-theme-gnome2)
+;(global-set-key [f9] 'color-theme-gnome2)
 
 ;; column 80 highlight
 (require 'whitespace)
