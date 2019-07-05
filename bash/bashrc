@@ -48,63 +48,6 @@ esac
 # enable color support of ls and also add handy aliases
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-case "$(uname)" in
-  Darwin*)
-    alias ls='ls -G'
-    ;;
-  Linux*)
-    alias ls='ls --color=auto'
-    ;;
-  *)
-    echo "unknown uname"
-    ;;
-esac
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-cdls() {
-  SAVEIFS=$IFS;
-  IFS=$(echo -en "\\n\\b");
-  if [ ! "$1" ]; then
-    cdls ~/;
-  else
-    cd "$1" || return;
-    ls -lh;
-  fi
-  IFS=$SAVEIFS;
-}
-alias cd='cdls'
-
-# for enable the ch in Emacs
-alias emacszh="export LC_CTYPE=zh_CN.UTF-8;/usr/bin/emacs";
-alias es="emacs -nw";
-
-alias q='cd ..'
-alias ,,='cd ../..'
-alias ,,,='cd ../../..'
-alias ,,,,='cd ../../../..'
-alias ,,,,,='cd ../../../../..'
-alias ,,,,,,='cd ../../../../../..'
-alias ,,,,,,,='cd ../../../../../../..'
-alias ,,,,,,,,='cd ../../../../../../../..'
-alias ,,,,,,,,,='cd ../../../../../../../../..'
-alias ,,,,,,,,,,='cd ../../../../../../../../../..'
-alias q!='exit'
-alias p='cd -'
-
-if [ -f ~/.bash_aliases ]; then
-  . ~/.bash_aliases
-fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -152,10 +95,4 @@ c() {
 
 eval "$(opam config env)"
 
-JAVA_8_HOME=$(/usr/libexec/java_home -v 1.8.0_162)
-JAVA_9_HOME=$(/usr/libexec/java_home -v 9.0.1)
-
-export JAVA_HOME=$JAVA_8_HOME
-alias jdk8="export JAVA_HOME=$JAVA_8_HOME"
-alias jdk9="export JAVA_HOME=$JAVA_9_HOME"
-PATH=$PATH:$JAVA_HOME
+[[ -s ~/.bash_aliases ]] && source ~/.bash_aliases

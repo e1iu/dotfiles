@@ -1,24 +1,31 @@
 # dotfiles
 my dotfiles
 
-### base
-.bashrc
-.bash_profile
+### bash
+
+1. bashrc
+2. bash_profile
+3. bash_envs
+4. bash_aliases
 
 ### vim
-.vimrc
-.vim/
+
+1. vimrc
+2. vim/
 
 ### JetBrain
 TODO
 
 ### vscode
-settings.json
-keybindings.json
+
+1. settings.json
+2. keybindings.json
 
 ### git
-.gitignore
-.gitconfig
+
+1. gitignore
+2. gitconfig
 
 ### emacs
+
 .emacs.d/
