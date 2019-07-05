@@ -25,13 +25,13 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
-" javascript
-Plugin 'https://github.com/pangloss/vim-javascript.git'
 
-" Nerdtree
-Plugin 'git://github.com/scrooloose/nerdtree.git'
+Plugin 'pangloss/vim-javascript.git'
+
+Plugin 'scrooloose/nerdtree.git'
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <F3> <Esc>:NERDTreeToggle<CR>
+vnoremap <F3> <Esc>:NERDTreeToggle<CR>
 
 Plugin 'Vimjas/vim-python-pep8-indent'
 
@@ -62,6 +62,9 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Set to auto read when a file is changed from the outside
+set autoread
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
@@ -116,6 +119,7 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -129,9 +133,6 @@ set noswapfile
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use spaces instead of tabs
 set expandtab
-
-" Be smart when using tabs ;)
-set smarttab
 
 " 1 tab == 2 spaces
 set shiftwidth=2
@@ -155,17 +156,20 @@ set laststatus=2
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" use jk map to Esc in INSERT mode.
+" use jk map to Esc in INSERT & CMD mode.
 inoremap jk <Esc>
+cnoremap jk <Esc>
 
 " window resize
 nmap  w=  :resize +3<CR>
 nmap  w-  :resize -3<CR>
 nmap  w,  :vertical resize -3<CR>
 nmap  w.  :vertical resize +3<CR>
+
+" Fast saving and quit
 nmap <leader>w :w!<CR>
 nmap  qqq :q!<CR>
-nmap  www :wq!<CR>
+nmap  wwq :wq!<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
