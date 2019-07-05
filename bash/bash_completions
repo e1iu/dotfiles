@@ -1,0 +1,22 @@
+# enable programmable completion features (you don't need to enable
+# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
+# sources /etc/bash.bashrc).
+case "$(uname)" in
+  Darwin*)
+    # https://davidalger.com/posts/bash-completion-on-os-x-with-brew
+    if [ -f /usr/local/Cellar/bash-completion/1.3_3/etc/profile.d/bash_completion.sh ]; then
+      . /usr/local/Cellar/bash-completion/1.3_3/etc/profile.d/bash_completion.sh
+    fi
+    ;;
+  Linux*)
+    if ! shopt -oq posix; then
+      if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+      elif [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+      fi
+    fi
+    ;;
+  *)
+    echo unknown uname ;;
+esac

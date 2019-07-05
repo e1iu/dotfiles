@@ -26,6 +26,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'vim-scripts/bash-support.vim'
+
 Plugin 'pangloss/vim-javascript.git'
 
 Plugin 'scrooloose/nerdtree.git'

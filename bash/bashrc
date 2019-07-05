@@ -1,4 +1,3 @@
-#! /bin/bash
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -49,29 +48,6 @@ esac
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-case "$(uname)" in
-  Darwin*)
-    if [ -f /usr/local/Cellar/bash-completion/1.3_3/etc/profile.d/bash_completion.sh ]; then
-      . /usr/local/Cellar/bash-completion/1.3_3/etc/profile.d/bash_completion.sh
-    fi
-    ;;
-  Linux*)
-    if ! shopt -oq posix; then
-      if [ -f /usr/share/bash-completion/bash_completion ]; then
-        . /usr/share/bash-completion/bash_completion
-      elif [ -f /etc/bash_completion ]; then
-        . /etc/bash_completion
-      fi
-    fi
-    ;;
-  *)
-    echo unknown uname ;;
-esac
-
-
 ################### some useful scripts ###################
 copy() {
   case "$(uname)" in
@@ -93,6 +69,7 @@ c() {
   fi
 }
 
-eval "$(opam config env)"
 
 [[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
+[[ -s ~/.bash_envs ]] && source ~/.bash_envs
+[[ -s ~/.bash_completions ]] && source ~/.bash_completions
