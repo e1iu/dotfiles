@@ -26,6 +26,13 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'python-mode/python-mode'
+let g:gymode_python = 'python3'
+
+" This plugin needs compile.
+" See https://github.com/ycm-core/YouCompleteMe for more detail.
+Plugin 'ycm-core/YouCompleteMe'
+
 Plugin 'vim-scripts/bash-support.vim'
 
 Plugin 'pangloss/vim-javascript.git'
@@ -34,8 +41,6 @@ Plugin 'scrooloose/nerdtree.git'
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
 nnoremap <F3> <Esc>:NERDTreeToggle<CR>
 vnoremap <F3> <Esc>:NERDTreeToggle<CR>
-
-Plugin 'Vimjas/vim-python-pep8-indent'
 
 Plugin 'vim-scripts/c.vim.git'
 
@@ -121,6 +126,9 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
+" Highlight the current insert line
+autocmd InsertEnter,InsertLeave * set cul!
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Files, backups and undo
@@ -163,15 +171,15 @@ inoremap jk <Esc>
 cnoremap jk <Esc>
 
 " window resize
-nmap  w=  :resize +3<CR>
-nmap  w-  :resize -3<CR>
-nmap  w,  :vertical resize -3<CR>
-nmap  w.  :vertical resize +3<CR>
+noremap  w=  :resize +3<CR>
+noremap  w-  :resize -3<CR>
+noremap  w,  :vertical resize -3<CR>
+noremap  w.  :vertical resize +3<CR>
 
 " Fast saving and quit
-nmap <leader>w :w!<CR>
-nmap  qqq :q!<CR>
-nmap  wwq :wq!<CR>
+noremap  www :w!<CR>
+noremap  qqq :q!<CR>
+noremap  wwq :wq!<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,6 +187,7 @@ nmap  wwq :wq!<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " fold mode
 set foldmethod=marker
+set showmatch
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
