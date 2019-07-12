@@ -8,7 +8,6 @@
 "    -> Files and backups
 "    -> Text, tab and indent related
 "    -> Moving around, tabs and buffers
-"    -> Status line
 "    -> Editing mappings
 "    -> Spell checking
 "    -> Misc
@@ -29,10 +28,6 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'python-mode/python-mode'
 let g:gymode_python = 'python3'
 
-" This plugin needs compile.
-" See https://github.com/ycm-core/YouCompleteMe for more detail.
-Plugin 'ycm-core/YouCompleteMe'
-
 Plugin 'vim-scripts/bash-support.vim'
 
 Plugin 'pangloss/vim-javascript.git'
@@ -46,7 +41,11 @@ Plugin 'vim-scripts/c.vim.git'
 
 Plugin 'kien/ctrlp.vim.git'
 
-Plugin 'Lokaltog/vim-powerline.git'
+Plugin 'vim-airline/vim-airline'
+"let g:airline_powerline_fonts = 1
+
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline_theme='dark'
 
 Plugin 'plasticboy/vim-markdown'
 
@@ -156,13 +155,6 @@ set si "Smart indent
 set wrap "Wrap lines
 
 
-""""""""""""""""""""""""""""""
-" => Status line
-""""""""""""""""""""""""""""""
-" Always show the status line
-set laststatus=2
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Editing mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -171,15 +163,14 @@ inoremap jk <Esc>
 cnoremap jk <Esc>
 
 " window resize
-noremap  w=  :resize +3<CR>
-noremap  w-  :resize -3<CR>
-noremap  w,  :vertical resize -3<CR>
-noremap  w.  :vertical resize +3<CR>
+noremap  <C-w>=  :resize +3<CR>
+noremap  <C-w>-  :resize -3<CR>
+noremap  <C-w>,  :vertical resize -3<CR>
+noremap  <C-w>.  :vertical resize +3<CR>
 
 " Fast saving and quit
-noremap  www :w!<CR>
+noremap  <leader>w :w!<CR>
 noremap  qqq :q!<CR>
-noremap  wwq :wq!<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
