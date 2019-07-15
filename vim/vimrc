@@ -25,6 +25,10 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'qc1iu/openjdk-ad.vim'
+
+Plugin 'tpope/vim-surround'
+
 Plugin 'python-mode/python-mode'
 let g:gymode_python = 'python3'
 
@@ -41,11 +45,9 @@ Plugin 'vim-scripts/c.vim.git'
 
 Plugin 'kien/ctrlp.vim.git'
 
-Plugin 'vim-airline/vim-airline'
-"let g:airline_powerline_fonts = 1
-
-Plugin 'vim-airline/vim-airline-themes'
-let g:airline_theme='dark'
+Plugin 'itchyny/lightline.vim'
+set laststatus=2
+set noshowmode
 
 Plugin 'plasticboy/vim-markdown'
 
@@ -171,6 +173,7 @@ noremap  <C-w>.  :vertical resize +3<CR>
 " Fast saving and quit
 noremap  <leader>w :w!<CR>
 noremap  qqq :q!<CR>
+noremap  qqw :wq<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
