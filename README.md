@@ -1,17 +1,23 @@
 # dotfiles
-my dotfiles
+My dotfiles
+
+### Usage
+
+``` shell
+$ bash setup.sh
+```
 
 ### bash
 
 1. bashrc
 2. bash_profile
-3. bash_envs
-4. bash_aliases
+3. bash_aliases
+4. bash_completions
 
 ### vim
 
 1. vimrc
-2. vim/
+2. TagHighLight
 
 ### JetBrain
 TODO
@@ -25,7 +31,3 @@ TODO
 
 1. gitignore
 2. gitconfig
-
-### emacs
-
-.emacs.d/

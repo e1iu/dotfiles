@@ -27,6 +27,8 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'qc1iu/openjdk-ad.vim'
 
+Plugin 'reedes/vim-wordy'
+
 Plugin 'tpope/vim-surround'
 
 Plugin 'python-mode/python-mode'
@@ -49,9 +51,12 @@ Plugin 'itchyny/lightline.vim'
 set laststatus=2
 set noshowmode
 
-Plugin 'plasticboy/vim-markdown'
-
+" The tabular plugin must come before vim-markdown.
+" See https://github.com/plasticboy/vim-markdown
 Plugin 'godlygeek/tabular'
+
+Plugin 'plasticboy/vim-markdown'
+let g:vim_markdown_folding_disabled = 1
 
 Plugin 'tpope/vim-git.git'
 
@@ -187,4 +192,5 @@ set showmatch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" TODO
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
