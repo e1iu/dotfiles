@@ -28,18 +28,8 @@ case "$TERM" in
   xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# Alarm if IFS changed
-OLD_IFS=$IFS
-check_ifs () {
-  if [ "$IFS" != "$OLD_IFS" ]; then
-    printf "\033[01;31m[ALARM: %q -> %q]\033[00m" $OLD_IFS $IFS
-  else
-    echo ""
-  fi
-}
-
 if [ "$color_prompt" = yes ]; then
-  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w$(check_ifs)\[\033[00m\]\$ '
+  PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
   PS1='\u@\h:\w\$ '
 fi

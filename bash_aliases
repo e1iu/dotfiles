@@ -23,15 +23,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 cdls() {
-  local saved_ifs=$IFS;
-  IFS=$(echo -en "\\n\\b");
-  if [ ! "$1" ]; then
-    cdls ~/;
-  else
-    cd "$1" || return;
-    ls -lh;
-  fi
-  IFS=$saved_ifs;
+  cd "$@" && ls -lh
 }
 alias cd='cdls'
 
