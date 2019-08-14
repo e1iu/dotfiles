@@ -25,6 +25,8 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'ekalinin/Dockerfile.vim'
+
 Plugin 'qc1iu/openjdk-ad.vim'
 
 Plugin 'reedes/vim-wordy'

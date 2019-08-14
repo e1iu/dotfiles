@@ -1,6 +1,7 @@
-.emacs.d/ac-comphist.dat
-.emacs.d/elpa/
-.emacs.d/abbrev_defs
-.emacs.d/auto-save-list/
+emacs/ac-comphist.dat
+emacs/elpa/
+emacs/abbrev_defs
+emacs/auto-save-list/
 
 .vim/bundle/
+*~
