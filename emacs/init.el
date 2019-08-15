@@ -1,102 +1,36 @@
-;; INSTALL PACKAGES
-;;------------------------------------------------------------------------------
-(require 'package) ;; You might already have this line
-(setq package-archives
-             '(("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+;; Turn off mouse interface early in startup to avoid momentary display
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives
-               '("gnu"  . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+(package-initialize)
 
-
-(package-initialize) ;; You might already have this line
-
-;; There is no need refresh every time.
-;;
-;;(defun my-packages-reset()
-;;  "Reset package manifest to the defined set."
-;;  (interactive)
-;;  (package-refresh-contents))
-;;
-;;(my-packages-reset)
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-
-
-(defun installPackage (p)
-  (unless (package-installed-p p)
-    (package-install p)))
-
-
-(defvar commonPackage
-  '(neotree
-    auto-complete
-    sr-speedbar
-    find-file-in-project
-    markdown-mode ; markdown
-    tuareg ; ocaml
-    py-autopep8 ; python
-    monokai-theme
-    ;js2-mode ; javascript
-    )
-  )
-
-(mapc 'installPackage commonPackage)
-
-(load-theme 'monokai' t)
-
-(require 'sr-speedbar)
-;;(setq sr-speedbar-right-side nil)
-(global-set-key [f12] 'sr-speedbar-toggle)
-
-(require 'find-file-in-project)
-(global-set-key (kbd "M-p") 'find-file-in-project)
-
-(require 'auto-complete-config)
-(define-key ac-completing-map [return] nil)
-(define-key ac-completing-map "\r" nil)
-;; (ac-config-default)
-
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-
-;(require 'color-theme)
-;(color-theme-initialize)
-;(color-theme-gnome2)
-;(global-set-key [f9] 'color-theme-gnome2)
-
-;; column 80 highlight
-(require 'whitespace)
-;;(setq whitespace-style '(face tabs lines-tail trailing))
-(setq whitespace-style '(face lines-tail)) ;; only highlight column 80
-(global-whitespace-mode t)
-
-
-;; BASIC CUSTOMIZATION
-;;---------------------------------------------
-
-;; hide the startup message
+;; No splash screen please ... jeez
 (setq inhibit-startup-message t)
 
-;; enable line numbers globally
-(global-linum-mode t)
+;; Set path to dependencies
+(setq site-lisp-dir
+      (expand-file-name "site-lisp" user-emacs-directory))
 
-;; display column in bottom
-(column-number-mode t)
+(setq settings-dir
+      (expand-file-name "settings" user-emacs-directory))
 
-;; close tool-bar
-(tool-bar-mode -1)
+;; Set up load path
+(add-to-list 'load-path settings-dir)
+(add-to-list 'load-path site-lisp-dir)
 
-(define-key global-map [C-return] 'set-mark-command)
+;; Keep emacs Custom-settings in separate file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+;; Set up appearance early
+(require 'appearance)
+
+;; Don't write lock-files, I'm the only one here
+(setq create-lockfiles nil)
 
 
 (setq-default indent-tabs-mode nil) ;; using space instead of TAB
-
-
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;;(set-default-font "Dejavu Sans Mono 10")
-;;(set-fontset-font "fontset-default" 'unicode"WenQuanYi Bitmap Song 12") ;;for linux
-;;(set-fontset-font "fontset-default" 'unicode "宋体 12") ;; for windows
 
 
 (defun match-paren (arg)
@@ -108,26 +42,30 @@
 (global-set-key "%" 'match-paren)
 
 
-(show-paren-mode)
 (electric-pair-mode)
-(winner-mode)
 (delete-selection-mode)
-(setq make-backup-file nil)
-(setq save-abbrevs nil)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   (quote
-    (tuareg sr-speedbar py-autopep8 neotree markdown-mode find-file-in-project color-theme auto-complete))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
-(when (eq system-type 'darwin)
-    (setq mac-command-modifier 'meta)
-      (setq mac-option-modifier nil))
+
+;; Are we on a mac?
+(setq is-mac (equal system-type 'darwin))
+
+(when is-mac (require 'mac))
+
+;; Setup packages
+(require 'setup-package)
+
+(defun init--install-packages ()
+  (install-packages
+   '(
+     monokai-theme
+     )))
+
+(condition-case nil
+    (init--install-packages)
+  (error
+   (package-refresh-contents)
+   (init--install-packages)))
+
+(load-theme 'monokai' t)
+
+;; Setup key bindings
+(require 'key-bindings)
