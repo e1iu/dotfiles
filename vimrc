@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: 
+" Maintainer:
 "       Eric Liu — @qc1iu
 "
 " Sections:
@@ -183,10 +183,12 @@ set noshowmode
 " See https://vim.fandom.com/wiki/Highlight_unwanted_spaces
 nnoremap <Leader>tw /\s\+$<CR>
 
-" use jk map to Esc in INSERT & CMD mode.
+" Quicker change to normal mode
 inoremap jk <Esc>
 
-cnoremap jk <Esc>
+" When the <Esc> is part of a mapping, the command is executed(in cmd mode),
+" so we use <C-c> instead.
+cnoremap jk <C-c>
 
 """ window resize
 noremap  <C-w>=  :resize +3<CR>
