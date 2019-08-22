@@ -29,6 +29,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
+" Using Vundle to manage the fzf source.
+" See https://vi.stackexchange.com/questions/13718/how-to-install-fzf-vim-with-vundle
+Plugin 'junegunn/fzf'
+
+Plugin 'junegunn/fzf.vim'
+
 Plugin 'ekalinin/Dockerfile.vim'
 
 Plugin 'qc1iu/openjdk-ad.vim'
@@ -47,8 +53,6 @@ Plugin 'pangloss/vim-javascript.git'
 Plugin 'scrooloose/nerdtree.git'
 
 Plugin 'vim-scripts/c.vim.git'
-
-Plugin 'kien/ctrlp.vim.git'
 
 Plugin 'itchyny/lightline.vim'
 
@@ -141,7 +145,7 @@ set ffs=unix,dos,mac
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 
-set nowb
+set nowritebackup
 
 set noswapfile
 
@@ -153,16 +157,8 @@ set shiftwidth=2
 
 set tabstop=2
 
-" Linebreak on 500 characters
-set lbr
-
-set tw=500
-
-set ai "Auto indent
-
-set si "Smart indent
-
-set wrap "Wrap lines
+" Auto delete indent when go to a new line without input anything.
+set autoindent
 
 " Fold mode
 set foldmethod=marker
@@ -190,7 +186,7 @@ inoremap jk <Esc>
 " so we use <C-c> instead.
 cnoremap jk <C-c>
 
-""" window resize
+""" Window resize
 noremap  <C-w>=  :resize +3<CR>
 
 noremap  <C-w>-  :resize -3<CR>
@@ -206,21 +202,24 @@ noremap  qqq :q!<CR>
 
 noremap  qqw :wq<CR>
 
-" map Ctrl+e to end-of-line in insert & cmd mode
+" Go to end-of-line in insert & cmd mode
 noremap! <C-e> <End>
 
-" map Ctrl+a to head-of-line in insert & cmd mode
+" Go to head-of-line in insert & cmd mode
 noremap! <C-a> <Home>
 
-" quick open and close NERDTree
+" Quick open and close NERDTree
 inoremap <F3> <Esc>:NERDTreeToggle<CR>
 
 nnoremap <F3> <Esc>:NERDTreeToggle<CR>
 
-" quick open and close Tagbar
+" Quick open and close Tagbar
 inoremap <F12> <Esc>:TagbarToggle<CR>
 
 nnoremap <F12> <Esc>:TagbarToggle<CR>
+
+" Make fzf performs more like CtrlP
+nnoremap <C-p> :Files<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
