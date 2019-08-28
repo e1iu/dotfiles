@@ -37,22 +37,14 @@ Plugin 'junegunn/fzf.vim'
 
 Plugin 'ekalinin/Dockerfile.vim'
 
+" My own plugin for OpenJDK project.
 Plugin 'qc1iu/openjdk-ad.vim'
 
 Plugin 'reedes/vim-wordy'
 
 Plugin 'tpope/vim-surround'
 
-Plugin 'python-mode/python-mode'
-let g:gymode_python = 'python3'
-
-Plugin 'vim-scripts/bash-support.vim'
-
-Plugin 'pangloss/vim-javascript.git'
-
 Plugin 'scrooloose/nerdtree.git'
-
-Plugin 'vim-scripts/c.vim.git'
 
 Plugin 'itchyny/lightline.vim'
 
@@ -62,8 +54,6 @@ Plugin 'godlygeek/tabular'
 
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
-
-Plugin 'tpope/vim-git.git'
 
 Plugin 'vim-scripts/TagHighlight'
 
