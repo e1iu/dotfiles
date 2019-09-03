@@ -161,6 +161,9 @@ set laststatus=2
 " No need show mode in status line again since 'lightline' has done this.
 set noshowmode
 
+" Enable enhanced mode in command-line completion
+set wildmenu
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
