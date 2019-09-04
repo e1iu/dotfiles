@@ -172,13 +172,17 @@ set wildmenu
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Disable arrow keys in Normal, Visual, Select modes
+" Disable arrow keys in Normal, Visual, Select, Insert modes
 " Take care of your 'hjkl' keys:P
 " NOTE: Be careful when recurive map to these keys.
 noremap   <Up>    <Nop>
 noremap   <Down>  <Nop>
 noremap   <Left>  <Nop>
 noremap   <Right> <Nop>
+inoremap  <Up>    <Nop>
+inoremap  <Down>  <Nop>
+inoremap  <Left>  <Nop>
+inoremap  <Right> <Nop>
 
 " Show trailing whitespace
 " See https://vim.fandom.com/wiki/Highlight_unwanted_spaces
