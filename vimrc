@@ -85,10 +85,10 @@ filetype plugin indent on    " required
 set autoread
 
 " Open the line num
-set nu!
+set number
 
 " Set 7 lines to the cursor - when moving vertically using j/k
-set so=7
+set scrolloff=7
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
@@ -118,11 +118,15 @@ syntax on
 
 set t_Co=256
 
+" Set colorscheme to molokai which should be installed by plugin manager.
+" Keep silence if molokai not existed.
 try
-    colorscheme molokai
+  colorscheme molokai
 catch
 endtry
 
+" If molokai scheme not be loaded, set the background to dark mode for default
+" scheme.
 set background=dark
 
 " Set utf8 as standard encoding and en_US as the standard language
