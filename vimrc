@@ -59,6 +59,11 @@ Plugin 'vim-scripts/TagHighlight'
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'octol/vim-cpp-enhanced-highlight'
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+
 Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
@@ -84,8 +89,8 @@ filetype plugin indent on    " required
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" Open the line num
-set number
+" Add a bit extra margin to the left
+set foldcolumn=1
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set scrolloff=7
@@ -135,7 +140,6 @@ set encoding=utf8
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
 
-
 " Turn backup off, since most stuff is in SVN, git et.c anyway...
 set nobackup
 
@@ -157,6 +161,7 @@ set autoindent
 " Fold mode
 set foldmethod=marker
 
+" When a bracket is inserted, briefly jump to the matching one.
 set showmatch
 
 " Always display the status line. Require by 'lightline' plugin
@@ -204,12 +209,11 @@ noremap  <C-w>,  :vertical resize -3<CR>
 
 noremap  <C-w>.  :vertical resize +3<CR>
 
-""" Fast saving and quit
+" Quick save.
 noremap  <Leader>w :w!<CR>
 
-noremap  qqq :q!<CR>
-
-noremap  qqw :wq<CR>
+" Quick exit
+noremap  <Leader>q :q!<CR>
 
 " Go to end-of-line in insert & cmd mode
 noremap! <C-e> <End>
@@ -227,8 +231,14 @@ inoremap <F12> <Esc>:TagbarToggle<CR>
 
 nnoremap <F12> <Esc>:TagbarToggle<CR>
 
+" Opens current buffer in new tab page
+nnoremap <Leader>s :tab split<CR>
+
 " Make fzf performs more like CtrlP
 nnoremap <C-p> :Files<CR>
+
+" Another shortcut key for fzf, to change buffer by fuzzing search
+nnoremap <Leader>b :Buffers<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
