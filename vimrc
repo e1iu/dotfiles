@@ -34,6 +34,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'junegunn/fzf'
 
 Plugin 'junegunn/fzf.vim'
+" Using a terminal buffer instead of raw terminal outputting.
+" 40% of screen estate
+" See https://github.com/junegunn/fzf.vim/issues/869
+let g:fzf_layout = { 'window': 'bot'.float2nr(&lines * 0.4).'new' }
 
 Plugin 'ekalinin/Dockerfile.vim'
 
@@ -43,6 +47,8 @@ Plugin 'qc1iu/openjdk-ad.vim'
 Plugin 'reedes/vim-wordy'
 
 Plugin 'tpope/vim-surround'
+
+Plugin 'tpope/vim-fugitive'
 
 Plugin 'scrooloose/nerdtree.git'
 
