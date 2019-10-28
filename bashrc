@@ -16,8 +16,15 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
+# See https://www.shellhacks.com/tune-command-line-history-bash/
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# Ignore specific commands
+HISTIGNORE="ls -l:q:cd"
+
+# Save each command right after it has been executed.
+PROMPT_COMMAND="history -a"
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -73,3 +80,5 @@ c() {
 [[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s ~/.bash_envs ]] && source ~/.bash_envs
 [[ -s ~/.bash_completions ]] && source ~/.bash_completions
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
