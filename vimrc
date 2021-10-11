@@ -29,6 +29,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Keep Plugin commands between vundle#begin/end.
+
+" A command-line fuzzy finder
 " Using Vundle to manage the fzf source.
 " See https://vi.stackexchange.com/questions/13718/how-to-install-fzf-vim-with-vundle
 Plugin 'junegunn/fzf'
@@ -39,37 +41,49 @@ Plugin 'junegunn/fzf.vim'
 " See https://github.com/junegunn/fzf.vim/issues/869
 let g:fzf_layout = { 'window': 'bot'.float2nr(&lines * 0.4).'new' }
 
+" Vim syntax file & snippets for Docker's Dockerfile
 Plugin 'ekalinin/Dockerfile.vim'
 
 " Personal plugin for OpenJDK project.
 Plugin 'theRealELiu/openjdk-ad.vim'
 
+" Uncover usage problems in your writing
 Plugin 'reedes/vim-wordy'
 
+" surround.vim: quoting/parenthesizing made simple
 Plugin 'tpope/vim-surround'
 
+" fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'scrooloose/nerdtree.git'
+" A tree explorer plugin for vim.
+Plugin 'preservim/nerdtree.git'
 
+" A light and configurable statusline/tabline plugin for Vim
 Plugin 'itchyny/lightline.vim'
 
-" The tabular plugin must come before vim-markdown.
-" See https://github.com/plasticboy/vim-markdown
+" Vim script for text filtering and alignment
+" NOTE: The tabular plugin must come before vim-markdown.
+"       See https://github.com/plasticboy/vim-markdown
 Plugin 'godlygeek/tabular'
 
+" Markdown Vim Mode
 Plugin 'plasticboy/vim-markdown'
 let g:vim_markdown_folding_disabled = 1
 
+" Extra highlighting of typedefs, enumerations etc (based on ctags)
 Plugin 'vim-scripts/TagHighlight'
 
-Plugin 'majutsushi/tagbar'
+" Vim plugin that displays tags in a window, ordered by scope
+Plugin 'preservim/tagbar'
 
+" Additional Vim syntax highlighting for C++ (including C++11/14/17)
 Plugin 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 
+" Molokai color scheme for Vim
 Plugin 'tomasr/molokai'
 
 " All of your Plugins must be added before the following line
