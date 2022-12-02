@@ -49,6 +49,9 @@ $gnu_ln -sfb -T $DOT_TOP/bash_aliases ~/.bash_aliases
 msg "Create soft link to .bash_completions"
 $gnu_ln -sfb -T $DOT_TOP/bash_completions ~/.bash_completions
 
+msg "Create soft link to .bash_history"
+$gnu_ln -sfb -T $DOT_TOP/bash_history ~/.bash_history
+
 echo ""
 banner "Setup vim configuration"
 

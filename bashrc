@@ -10,18 +10,18 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth:erasedups
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 # See https://www.shellhacks.com/tune-command-line-history-bash/
-HISTSIZE=10000
-HISTFILESIZE=20000
+HISTSIZE=100000
+HISTFILESIZE=200000
 
 # Ignore specific commands
-HISTIGNORE="ls -l:q:cd"
+HISTIGNORE="ll:ll -*:ls:ls -*:q:cd:cd *:exit:vi"
 
 # Save each command right after it has been executed.
 PROMPT_COMMAND="history -a"
