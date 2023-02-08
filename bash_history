@@ -3,13 +3,23 @@ $JAVA_HOME/bin/java -jar benchmarks.jar CompressBenchmark2.FMA$
 apt-get --help
 apt-get install --help
 asdf
+asdll
+awk '{$1=$1;print}'
+awk '{$1=$1;print}' bash_history_backup
+awk '{$1=$1;print}' bash_history_backup > bash_history_backup
+awk '{$1=$1;print}' bash_history_backup > bash_history_backup1
+bash tar-jdk.sh
 bi
-cat c2_MacroAssembler_aarch64.cpp 
-cat fmadd.s 
-cat main.c 
-cat .ssh/id_ed25519.pub 
-cat TestChang.java 
-cat TestMulLong.java 
+cat c2_MacroAssembler_aarch64.cpp
+cat fmadd.s
+cat main.c
+cat release
+cat .ssh/id_ed25519.pub
+cat tar-jdk.sh
+cat TestChang.java
+cat TestMulLong.java
+cat TestVectorZero.
+cat TestVectorZero.java
 cd ad
 cd arm/
 cd blas/
@@ -43,21 +53,32 @@ cd tu
 cd work
 cd ws_ceph
 cd x86/
+./comp.sh TestChang.java
 cp bash_history_backup bash_history
 cp EBM-3755.tar.bz2 ~/
 cp gitconfig ~/.gitconfig
+cp -ri jtreg ~/
 cp tar-jdk.sh ../
+cp tar-jdk.sh build-fastdebug/
 cp TestMulLong.java TestChang.java
 cp TestVectorMaskFromLong.java TestMaskCast.java
+cp TestVectorMaskFromLong.java TestVector.template
+cp TestVector.template TestByteMaskVectorZero.java
+cp TestVector.template TestVectorADDMaskedLanes.java
+cp TestVector.template TestVectorZero.java
+cp TestZero.java TestVector.template
 cp ~/tmp/Test.java Test2.java
 cpufreq-info
 cpufreq-set -c 10
 ctags
-docker_image_name 
+dc build-fastdebug/
+docker_image_name
+./dump.sh -g TestChang ADDMasked
 ./dump.sh -g TestChang testZero
+./dump.sh -g TestVectorZero testZero
 ./dump.sh TestMaskCast
 ./dump.sh TestMaskCast long128ToInt64
-./dump.sh TestMulLong main 
+./dump.sh TestMulLong main
 ./dump.sh TestMulLong main > log
 ./dump.sh TestMulLong testAdd0
 ./dump.sh TestMulLong testAdd0 > log5
@@ -66,8 +87,13 @@ docker_image_name
 ./dump.sh TestMulLong testAndIReduce128
 ./dump.sh TestPengChang main
 ./dump.sh Test testAndIReduce128
-echo $MAVEN_OPTS 
+./dump.sh TestVector testZero
+./dump.sh TestVector testZeroB
+echo $MAVEN_OPTS
+~/entllt/ci-scripts/projects/jdk/checkout-build-jdk.sh --configure-args "-Xlint:-options" --nocheckout --debug-level fastdebug
 ~/entllt/ci-scripts/projects/jdk/checkout-build-jdk.sh --nocheckout
+~/entllt/ci-scripts/projects/jdk/checkout-build-jdk.sh --nocheckout --debug-level fastdebug --configure-args "--disable-werror"
+~/entllt/ci-scripts/projects/jdk/checkout-build-jdk.sh --nocheckout --debug-level fastdebug --help
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar *.*CompressBenchark2.FMA
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar *.CompressBenchark2.FMA
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar .*CompressBenchark2.FMA
@@ -79,176 +105,283 @@ echo $MAVEN_OPTS
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm .*CompressBenchmark2.FMA$
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm .*CompressBenchmark2.FMA2$
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm .*CompressBenchmark2.FMA4$
-~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -jvmArgs "" .*CompressBenchmark2.FMA4$ 
-~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -jvmArgs "-XX:+OptoScheduling" .*CompressBenchmark2.FMA4$ 
+~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -jvmArgs "" .*CompressBenchmark2.FMA4$
+~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -jvmArgs "-XX:+OptoScheduling" .*CompressBenchmark2.FMA4$
 ~/entllt/openjdk/jdk/build-release/images/jdk/bin/java -version
 expand
 expand --help
-expand python2.7 aarch64-asmtest.py 
-expand | python2.7 aarch64-asmtest.py > asmtest.out.h 
+expand python2.7 aarch64-asmtest.py
+expand | python2.7 aarch64-asmtest.py > asmtest.out.h
+export JAVA_HOME=/home/eriliu02/entllt/openjdk/jdk/build-release/images/jdk/
 export MAVEN_OPTS="--add-modules jdk.incubator.vector"
-gcc -O2 fma.c 
-git add bash_history 
-git add ebm-sample.sh fma.c 
-git add fma.c 
-git add multiply-add.c 
+export PATH=$PATH:$JAVA_HOME/bin/
+gcc -O2 fma.c
+git add bash_history
+git add ebm-sample.sh fma.c
+git add fma.c
+git add multiply-add.c
+git branch aaaa
+git branch before-hao
 git branch cang
 git branch chang
-git branch -D cang 
+git branch -d aaaa
+git branch -D aaaa
+git branch -D big-patch fix-tolong fix-tolong-upstream fromlong fromlong-upstream
+git branch -D cang
+git branch -D chang fix-test-reverse fix-test-reverse-upstream
+git branch -D hao-final
+git branch -D maskAll n2-opt neon-neg reduction reduction-internal test-merge vectorapi-review
+git branch -D review-2 review-3
 git branch ebm-test
+git branch hao-final-2
+git checkout 0cc66aeae8cbf2d01
+git checkout aaaa
 git checkout chang
-git checkout chang 
-git checkout ebm-test 
-git checkout master 
+git checkout chang
+git checkout ebm-test
+git checkout hao-final
+git checkout hao-final-2
 git checkout vim/
 git commit
 git commit --amend
-git fetch 
-git plog
+git diff HEAD~1
 git push
-git push origin 
+git push
+git push eriliu hao-final-2:test-hao
+git push eriliu hao-final:test-hao
+git push eriliu master
+git push github
 git push ssh://gerrit.oss.arm.com/enterprise-llt/ci-scripts HEAD:refs/for/master
-git rebase 
-git remote -v
+git remote add aaa http://asdfasdfasdf
+git remote remove aaa
+gpg -a -d pass.txt.gpg
+gpg --generate-key
+gpg --list-kes eri1iu
+gpg --list-keys eri1iu
+gpg pass.txt.gpg
 grep --help
 grep -Hnr "abs("
+grep -Hnr "BasicType"
 grep -Hnr "bitCount"
 grep -Hnr "Blend"
+grep -Hnr ".cast("
+grep -Hnr "\.cast("
+grep -Hnr "cast("
+grep -Hnr "ciType"
+grep -Hnr "class ciType"
 grep -Hnr "CompileCommand: compileonly"
 grep -Hnr "compileonly"
 grep -Hnr "Compress"
 grep -Hnr "CompressBit"
+grep -Hnr "degener"
 grep -Hnr "degenerate"
+grep -Hnr "enum BasicType"
+grep -Hnr "enum ciType"
 grep -Hnr "fma"
 grep -Hnr "FMA"
 grep -Hnr "fromArray"
+grep -Hnr "gatherLoad"
+grep -Hnr "gatherMasked"
+grep -Hnr "gatherScatte"
+grep -Hnr "gatherScatter"
+grep -Hnr "googletest"
 grep -Hnr "indexOf"
 grep -Hnr "indexof_char"
+grep -Hnr "init"
+grep -Hnr "inline_vector_nary_operation"
+grep -Hnr "is_integral_type"
+grep -Hnr "jterg"
+grep -Hnr "JTreg"
 grep -Hnr "jtreg-report"
 grep -Hnr "lanewise("
+grep -Hnr "LIVE"
 grep -Hnr "RevereseL"
 grep -Hnr "ReverseBytesI"
+grep -Hnr "RotateRight"
 grep -Hnr "SPECIES"
 grep -Hnr "string_indexof_char"
 grep -Hnr "string_indexof_char_sve"
 grep -Hnr "TRAILING_ZEROS_COUNT"
 grep -Hnr "TZ_COUNT"
+grep -Hnr "uncast"
+grep -Hnr "Uncast"
 grep -Hnr "VectorBlend"
+grep -Hnr "VECTOR_OP_UNCAST"
 grep -Hnr "zero_block"
-/home/eriliu02/entllt/openjdk/jdk/build-fastdebug/jdk/bin/java -Xbatch -ea --add-modules jdk.incubator.vector TestMulLong 
+/home/eriliu02/entllt/openjdk/jdk/build-fastdebug/jdk/bin/java -Xbatch -ea --add-modules jdk.incubator.vector TestMulLong
 /home/eriliu02/entllt/openjdk/jdk/build-release/images/jdk/bin/java -version
-http_server 
-ifconfig 
+http_server
+ifconfig
 it diff
 java
-java 
-jdk_make 
-jdk_reconfigure 
-ls 
+java --add-modules=jdk.incubator.vector -jar benchmarks.jar
+java -jar benchmarks.jar
+java -jar benchmarks.jar --jvmArgs="--add-modules=jdk.incubator.vector"
+java -jar benchmarks.jar -jvmArgs="--add-modules=jdk.incubator.vector"
+jdk_make
+jdk_po
+jdk_reconfigure
+ld -l
+ls
 ls -
+lscpu
 ls -l
-ls l
-ls l-
 mkdir EMB
 mkdir fmadd
-/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions  --add-modules=jdk.incubator.vector -jar benchmarks.jar --help SimpleVectorAPI
-/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions  --add-modules=jdk.incubator.vector -jar benchmarks.jar --jvmArgs '-Xbatch -Xmx1g -Xms1g  -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 --prof perfasm -wi 3 -i 40 SimpleVectorAPI
-/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions  --add-modules=jdk.incubator.vector -jar benchmarks.jar --jvmArgs '-Xbatch -Xmx1g -Xms1g  -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' --prof perfasm -wi 3 -i 40 SimpleVectorAPI
-/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions  --add-modules=jdk.incubator.vector -jar benchmarks.jar --prof perfasm -wi 3 -i 40 SimpleVectorAPI
-/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions  --add-modules=jdk.incubator.vector -jar benchmarks.jar SimpleVectorAPI
+/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions --add-modules=jdk.incubator.vector -jar benchmarks.jar --help SimpleVectorAPI
+/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions --add-modules=jdk.incubator.vector -jar benchmarks.jar --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 --prof perfasm -wi 3 -i 40 SimpleVectorAPI
+/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions --add-modules=jdk.incubator.vector -jar benchmarks.jar --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' --prof perfasm -wi 3 -i 40 SimpleVectorAPI
+/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions --add-modules=jdk.incubator.vector -jar benchmarks.jar --prof perfasm -wi 3 -i 40 SimpleVectorAPI
+/mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -XX:+UnlockDiagnosticVMOptions --add-modules=jdk.incubator.vector -jar benchmarks.jar SimpleVectorAPI
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*$1.$2 -XX:CompileCommand=compileonly,*$1.$2 -XX:CompileCommand=dontinline,*$1.$2 DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*$1.$2 -XX:CompileCommand=compileonly,*$1.$2 -XX:CompileCommand=dontinline,*$1.$2" "*.DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*$1.$2 -XX:CompileCommand=compileonly,*$1.$2 -XX:CompileCommand=dontinline,*$1.$2' "*.DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*.ADDMaskedLanes_thrpt_jmhStub -XX:CompileCommand=compileonly,*.ADDMaskedLanes_thrpt_jmhStub -XX:CompileCommand=dontinline,*.ADDMaskedLanes_thrpt_jmhStub' "*.DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*.ADDMaskedLanes_thrpt_jmhStub -XX:CompileCommand=compileonly,*.ADDMaskedLanes_thrpt_jmhStub -XX:CompileCommand=dontinline,*.ADDMaskedLanes_thrpt_jmhStub' ".*DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 -XX:UseSVE=0' ".*ByteMaxVector.zero$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:UseSVE=0' ".*DoubleMaxVector.ADDMaskedLane$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:UseSVE=0' ".*.MaskedLanes_thrpt_jmhStub$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs ' -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 -Xbatch -Xmx1g -Xms1g -XX:UseSVE=0' ".*ByteMaxVector.zero$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*.ADDMaskedLanes_thrpt_jmhStub' ".*DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-fastdebug/images/jdk/bin/java -jar benchmarks.jar -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:CompileCommand=print,*.ADDMaskedLanes_thrpt_jmhStub' ".*DoubleMaxVector.ADDMaskedLanes$" > log
+/mnt/local/entllt/openjdk/jdk/build-fastdubug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 -XX:UseSVE=0' ".*ByteMaxVector.zero$"
+/mnt/local/entllt/openjdk/jdk/build-fastedebug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:UseSVE=0' ".*ByteMaxVector.zero$"
+/mnt/local/entllt/openjdk/jdk/build-fasterdubug/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 -XX:UseSVE=0' ".*ByteMaxVector.zero$"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar ".*IntMaxVector.ADDMasked$"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar ".*IntScalar.ADDMasked$"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar ".*IntVector*"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar ".*IntVector.*"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar "IntVector"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0 -XX:UseSVE=0' ".*DoubleMaxVector.ADDMaskedLanes$"
+/mnt/local/entllt/openjdk/jdk/build-release/images/jdk/bin/java -jar benchmarks.jar -prof perfasm -wi 3 -i 10 --jvmArgs '-Xbatch -Xmx1g -Xms1g -XX:UseSVE=0' ".*ByteMaxVector.zero$"
+mv a bash_history
 mv benchmarks.jar benchmarks-1108.jar
 mv ../EBM-3755.tar.bz2 .
 mv EBM-3755.tar.bz2 EBM/
 mv EMB EBM
 mv EMB/ EMB
 mv fma.c mutiply-add.c
-mv log bash_history 
+mv ../jtreg/ .
+mv log bash_history
 mv mutiply-add.c multiply-add.c
-mvn --add-modules jdk.incubator.vector clean install
 mvn clean
 mvn clean install
 mvn clean install -D--add-modules jdk.incubator.vector
-mvn clean install -DjvmArgs="--add-modules jdk.incubator.vector"
-mvn clean install -Djvm.options="--add-modules jdk.incubator.vector"
-mvn -Djvm.options="--add-modules jdk.incubator.vector" clean
+mvn clean install -Djavac.options="--add-modules jdk.incubator.vector"
+mvn -Djavac.options="--add-modules jdk.incubator.vector" clean install
+mvn -Djvm.options="--add-modules jdk.incubator.vector" clean install
 numactl
 numactl --all
-numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xms1g' SimpleVectorInt.addShort -f 6 
-numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' SimpleVectorInt.addShort -f 6 
-numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xmxs1g' SimpleVectorInt.addShort -f 6 
+numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xms1g' SimpleVectorInt.addShort -f 6
+numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' SimpleVectorInt.addShort -f 6
+numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xmxs1g' SimpleVectorInt.addShort -f 6
 objdump -d .a
-objdump -d zeus_sim 
-objdump -O3 -d a.out 
-p
-panama_aarch64 
+objdump -d aarch64-linux-gnu/
+objdump -d hsdis-aarch64.so
+objdump -d zeus_sim
+objdump -O3 -d a.out
+panama_aarch64
 perf
 perf d
 perf stat -d
 perf stat -d echo hello
-perf stat -d numactl -C 0-3 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 10-12 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -i 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 10-12 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C10 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -i 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 10 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C10 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C10 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort_avgt_jmhStub' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C10 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 11-13 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 11 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 20-23 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -C 20 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' SimpleVectorInt.addShort -f 6 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --prof perfasm --jvmArgs '-Xmx1g -Xms1g ' SimpleVectorInt.addShort -f 6 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --prof perfasm --jvmArgs '-Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' SimpleVectorInt.addShort -f 6 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 100 --prof perf --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.asdfasdfasdf' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort_avgt_jmhStub' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --prof perfasm --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort_avgt_jmhStub' SimpleVectorInt.addShort -f 3 
-perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --prof perfasm --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort' SimpleVectorInt.addShort -f 3 
+perf stat -d numactl -C 0-3 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 10-12 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -i 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 10-12 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C10 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -i 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 10 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C10 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C10 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort_avgt_jmhStub' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C10 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 11-13 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 11 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 20-23 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -C 20 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort*' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --jvmArgs '-Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' SimpleVectorInt.addShort -f 6
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --prof perfasm --jvmArgs '-Xmx1g -Xms1g ' SimpleVectorInt.addShort -f 6
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar --prof perfasm --jvmArgs '-Xmx1g -Xms1g -XX:LoopUnrollLimit=0 -XX:LoopMaxUnroll=0' SimpleVectorInt.addShort -f 6
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 100 --prof perf --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.asdfasdfasdf' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort_avgt_jmhStub' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --prof perfasm --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort_avgt_jmhStub' SimpleVectorInt.addShort -f 3
+perf stat -d numactl -N 0 -m 0 /mnt/ceph/homes/ninjia02/jdk/daily-build/aarch64-release/jdk-master/bin/java -Xms4g -Xmx4g -jar /mnt/ceph/homes/ninjia02/tmp/benchmarks-all.jar -wi 20000 --prof perfasm --jvmArgs '-Xmx1g -Xms1g -XX:CompileCommand=print,*.addShort' SimpleVectorInt.addShort -f 3
 perf top
 perseus_sim -c core.cpu.linux_emulation.enabled=true -c core.cpu.uoptrc.enabled=true ./fmadd.out
 python
-python2.7 aarch64-asmtest.py aarch64-asmtest.py 
-python2.7 aarch64-asmtest.py > asmtest.out.h 
+python2.7 aarch64-asmtest.py aarch64-asmtest.py
+python2.7 aarch64-asmtest.py > asmtest.out.h
 python2.7 aarch64-asmtest.py | expand
-python2.7 aarch64-asmtest.py | expand 
-python2 aarch64-asmtest.py 
-python3 aarch64-asmtest.py 
-python aarch64-asmtest.py 
-python aarch64-asmtest.py aarch64-asmtest.py 
-readelf -a zeus_sim 
-readelf -h zeus_sim 
+python2.7 aarch64-asmtest.py | expand
+python2 aarch64-asmtest.py
+python3 aarch64-asmtest.py
+python aarch64-asmtest.py
+python aarch64-asmtest.py aarch64-asmtest.py
+readelf -a zeus_sim
+readelf -h hsdis-aarch64.so
+readelf -h zeus_sim
 rm -rf *~
-rm -rf a.diff 
-rm -rf apache-maven-3.8.2-bin.tar.gz 
-rm -rf a.tmp b.diff 
-rm -rf .bash_history~ 
+rm -rf a.c after before res*
+rm -rf a.diff
+rm -rf apache-maven-3.8.2-bin.tar.gz
+rm -rf a.tmp b.diff
+rm -rf .bash_history~
+rm -rf benchmarks.jar
+rm -rf benchmarks-panama.jar
+rm -rf build-fastdebug/
+rm -rf ci-scripts.tar
+rm -rf doc
+rm -rf Documents/
+rm -rf Downloads/
 rm -rf enterprise-llt/
-rm -rf eriliu02.tar 
+rm -rf eriliu02.tar
+rm -rf go/
+rm -rf graal graal_src/
 rm -rf hs_err_pid*
+rm -rf jtreg
+rm -rf *.log
 rm -rf log
-rm -rf movprfx.bench 
+rm -rf log
+rm -rf log*
+rm -rf movprfx.bench
 rm -rf n2/
 rm -rf *.numa
 rm -rf perf*
+rm -rf Pictures/
+rm -rf Public/
 rm -rf replay_pid*
 rm -rf res/
-rm -rf shellcheck-v0.8.0.linux.aarch64.tar.xz 
+rm -rf share/
+rm -rf shellcheck-v0.8.0.linux.aarch64.tar.xz
+rm -rf Templates/
 rm -rf testjmh/
+rm -rf TestPengChang.*
+rm -rf tmp/
 rm -rf tmptest/
+rm -rf v1.bench
+rm -rf v1.sh
 rm -rf .vim/
 rm -rf work
-rm -rf x.res y.res 
+rm -rf x.res y.res
 ./run.sh TestMaskCast
-scp_bot 
+scp_bot
 scp_bot benchmarks-1108.jar ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
 scp_bot benchmarks-1108.jar ent-arm-34.shanghai.arm.com:/homes/eriliu02
+scp_bot benchmarks-injdk.jar ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
+scp_bot dump.sh ent-arm-30.oss.arm.com:/home/bot/eriliu02
 scp_bot --help
+scp_bot jdk.tar ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
+scp_bot netlib-benchmarks.jar ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
 scp_bot target/benchmarks.jar ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
+scp_bot TestChang.java ent-arm-30.oss.arm.com:/home/bot/eriliu02
 scp_bot TestMaskCast.java ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
 scp_bot TestMulLong.class ent-arm-34.shanghai.arm.com:/home/bot/eriliu02
+sort bash_history | uniq -u
 sort bash_history | uniq -u~
+sort bash_history | uniq -u > bash_history_backup
+ssh_admin ent-arm-34.shanghai.arm.com
+ssh-keygen -f "/home/eriliu02/.ssh/known_hosts" -R "ent-arm-34.shanghai.arm.com"
 ssh-keygen -t ed25519
-su 
+su
 sudo apt-get install cpufreq-info
 sudo apt-get install cpufrequtils
 sudo apt-get install ctags
@@ -270,87 +403,118 @@ sudo --help
 sudo ln -sT /mnt/local /home/eriliu02
 sudo perf top -C 10
 sudo perf top --help
-sudo rm -rf eriliu02 
+sudo rm -rf eriliu02
 sudo top
 su ent-admin
 suod top
 tar --help
-tar -xjvf EBM-3755.tar.bz2 
+tar -xjvf EBM-3755.tar.bz2
 type docker_execute
-type gerrit_push_patch 
+type gerrit_push_patch
 type mvn
-vi aarch64_vector.ad 
-vi aarch64_vector_ad.m4 
-vi asdfasd    
-vi assembler_riscv.cpp 
+vi aarch64.ad
+vi aarch64_vector.ad
+vi aarch64_vector_ad.m4
+vi asdfasd
+vi assembler_aarch64.hpp
+vi assembler_riscv.cpp
 vi a.tmp
+vi autoconf/flags-cflags.m4
 vi .bash_envs
-vi .bash_history 
 vi bash_history
-vi bash_history 
+vi bash_history_backup
+vi bash_history_backup1
 vi .bash_jdk
-vi build-run-jmh.sh 
-vi c2compiler.cpp 
-vi c2_MacroAssembler_riscv.cpp 
-vi c2_MacroAssembler_x86.cpp 
-vi classes/jdk/incubator/vector/IntVector.java 
-vi classes/jdk/incubator/vector/LongVector.java 
-vi classes/jdk/incubator/vector/VectorOperators.java 
-vi compiler/compilerOracle.cpp 
-vi CompressBenchmark2.java 
-vi developer-arm-ebm.mk 
-vi docker.sh 
+vi bashrc
+vi build-run-jmh.sh
+vi buildtools_jdk_tools_classes__the.BUILD_TOOLS_JDK_batch.cmdline
+vi c2compiler.cpp
+vi c2_MacroAssembler_riscv.cpp
+vi c2_MacroAssembler_x86.cpp
+vi checkout-build-jdk.sh
+vi ci/ciType.hpp
+vi classes/jdk/incubator/vector/IntVector.java
+vi classes/jdk/incubator/vector/LongVector.java
+vi classes/jdk/incubator/vector/VectorOperators.java
+vi common/JavaCompilation.gmk
+vi compiler/compilerOracle.cpp
+vi CompressBenchmark2.java
+vi configure
+vi developer-arm-ebm.mk
+vi docker.sh
 vi ebm-sample.sh
+vi /etc/ssh/sshd_config
 vi fma.c
 vi fmadd.s
-vi .gitconfig 
-vi gitconfig 
-vi IntMaxVector.java 
-vi IntScalar.java 
-vi IntVector.java 
-vi jtreg-report.sh 
-vi library_call.cpp 
-vi log2 
-vi log5 
-vi macroAssembler_aarch64.hpp 
+vi .gitconfig
+vi gitconfig
+vi Hsdis.gmk
+vi IntMaxVector.java
+vi IntScalar.java
+vi IntVector.java
+vi jdk/jdk/incubator/vector/IntMaxVectorLoadStoreTests.java
+vi jtreg-report.sh
+vi langtools/build.properties
+vi library_call.cpp
+vi library_call.hpp
+vi log2
+vi log5
+vi macroAssembler_aarch64.hpp
 vi main.c
-vi matcher.cpp 
-vi matcher_riscv.hpp 
-vimdiff b.diff a.diff 
-vi msg.sh 
-vi multiply-add.c 
-vi riscv.ad 
-vi riscv_v.ad 
-vi run-jtreg-tests.sh 
-vi src/main/java/com/arm/benchmarks/CompressBenchmark2.java 
-vi .ssh/id_ed25519.pub 
-vi static_analysis.sh 
+vi main/java/com/arm/benchmarks/vector/SimpleVectorInt.java
+vi Mask.java
+vi matcher.cpp
+vi matcher_riscv.hpp
+vimdiff b.diff a.diff
+vi msg.sh
+vi multiply-add.c
+vi my-vim.vim
+vi openjdk-build.dockerfile
+vi openjdk-build.mk
+vi parse1.cpp
+vi README.md
+vi riscv.ad
+vi riscv_v.ad
+vi run-jtreg-tests.sh
+vi src/main/java/com/arm/benchmarks/CompressBenchmark2.java
+vi .ssh/config
+vi .ssh/id_ed25519.pub
+vi static_analysis.sh
+vi stubGenerator_aarch64.cpp
 vi stubGenerator_aarch64.cpp +663
 vi stubRoutines_aarch64.cpp
 vi stubRoutines_aarch64.cpp +=663
 vi stubRoutines_aarch64.cpp +663
-vi tar-jdk.sh 
+vi subnode.cpp
+vi support_jrtfs_classes__the.BUILD_JRTFS_batch.cmdline
+vi TestByteMaskVectorZero.java
 vi test.c
-vi test.cpp 
-vi test.java 
+vi test.cpp
+vi test.java
 vi Test.java
 vi test_ld_st.
-vi test_ld_st.c 
-vi TestMaskCast.java 
+vi test_ld_st.c
+vi TestLongVect.java
+vi TestMaskCast.java
 vi TestPengChang.java
-vi test.s 
-vi TestVectorMaskFromLong.java 
-vi TestVectorShiftImm.java 
-vi VectorCastShape128To64Test.java 
-vi VectorMaskCastTest.java 
-vi vectornode.cpp 
-vi vectornode.hpp 
-vi VectorOperators.java 
+vi test.s
+vi TestVectorShiftImm.java
+vi TestZero.java
+vi token
+vi truecount.before
+vi v1.
+vi v1.bench
+vi v1.sh
+vi VectorCastShape128To64Test.java
+vi vector.cpp
+vi vectornode.hpp
+vi VectorOperators.java
 vi .vimrc
-vi vimrc 
-vi vm_version_aarch64.cpp 
-whereis java
+vi vimrc
+vi vm_version_aarch64.cpp
+whereis hsdis-aarch64.so
 xit
 ./zeus_sim -c
-mv a bash_history
+cp bash_history_backup bash_history
 git diff
+git st
