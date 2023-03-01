@@ -1,0 +1,71 @@
+#! /bin/bash
+PANAMA_VECTOR_HOME=/home/eriliu02/entllt/openjdk/panama-vector
+PANAMA_VECTOR_BUILD_HOME=$PANAMA_VECTOR_HOME/build-fastdebug
+PANAMA_VECTOR_SRC_HOME=$PANAMA_VECTOR_HOME/jdk_src
+
+
+JDK_DEV_HOME=/home/eriliu02/entllt/openjdk/jdk
+JDK_BUILD_HOME=$JDK_DEV_HOME/build-fastdebug
+JDK_SRC_HOME=$JDK_DEV_HOME/jdk_src
+
+export MY_JDK_HOME=$JDK_BUILD_HOME/images/jdk
+alias myjava=$JDK_BUILD_HOME/images/jdk/bin/java
+
+jdk_opto() {
+  cd $JDK_SRC_HOME/src/hotspot/share/opto
+}
+
+jdk_aarch64() {
+  cd $JDK_SRC_HOME/src/hotspot/cpu/aarch64
+}
+
+jdk_test() {
+  cd $JDK_DEV_HOME/test
+}
+
+jdk_reconfigure() {
+  pushd $JDK_BUILD_HOME
+  trap 'popd' EXIT INT TERM
+  safe make reconfigure
+  popd
+}
+
+jdk_make() {
+  pushd $JDK_BUILD_HOME
+  trap 'popd' EXIT INT TERM
+  safe make images
+  popd
+}
+
+panama_opto() {
+  cd $PANAMA_VECTOR_SRC_HOME/src/hotspot/share/opto
+}
+
+panama_aarch64() {
+  cd $PANAMA_VECTOR_SRC_HOME/src/hotspot/cpu/aarch64
+}
+
+panama_test () {
+  cd $PANAMA_VECTOR_HOME/test
+}
+
+panama_reconfigure() {
+  pushd $PANAMA_VECTOR_BUILD_HOME
+  trap 'popd' EXIT INT TERM
+  safe make reconfigure
+  popd
+}
+
+panama_make() {
+  pushd $PANAMA_VECTOR_BUILD_HOME
+  trap 'popd' EXIT INT TERM
+  safe make images
+  popd
+}
+
+panama_clean() {
+  pushd $PANAMA_VECTOR_BUILD_HOME
+  trap 'popd' EXIT INT TERM
+  safe make clean
+  popd
+}
