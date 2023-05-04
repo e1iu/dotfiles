@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
-"       Eric Liu — @theRealELiu
+"       Eric Liu — @e1iu
 "
 " Sections:
 "     -> Plugins

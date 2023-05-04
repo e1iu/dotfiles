@@ -56,6 +56,11 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 
 ################### some useful scripts ###################
+
+delete_empty_line() {
+  sed '/^$/d' $1
+}
+
 copy() {
   case "$(uname)" in
     Darwin*)

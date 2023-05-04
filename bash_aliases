@@ -13,7 +13,7 @@ case "$(uname)" in
     echo "unknown uname"
     ;;
 esac
-alias grep='grep --color=auto'
+alias grep='grep -Hnr --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
