@@ -57,8 +57,43 @@ export LSCOLORS=gxfxcxdxbxegedabagacad
 
 ################### some useful scripts ###################
 
-delete_empty_line() {
-  sed '/^$/d' $1
+line_delete_startwith() {
+  local _opt=$1
+  local _pattern
+  case $_opt in
+    -i)
+      shift
+      _pattern="$1"
+      shift
+      sed -i "/^$_pattern/d" "$@" ;;
+    *)
+      _pattern="$1"
+      shift
+      sed "/^$_pattern/d" "$@" ;;
+  esac
+
+}
+
+line_delete_tail_space() {
+  local _opt=$1
+  case $_opt in
+    -i)
+      shift
+      sed -i 's/[[:space:]]*$//' "$@" ;;
+    *)
+      sed 's/[[:space:]]*$//' "$@" ;;
+  esac
+}
+
+line_delete_empty() {
+  local _opt=$1
+  case $_opt in
+    -i)
+      shift
+      sed -i '/^$/d' "$@" ;;
+    *)
+      sed '/^$/d' "$@" ;;
+  esac
 }
 
 copy() {
@@ -87,3 +122,6 @@ c() {
 [[ -s ~/.bash_completions ]] && source ~/.bash_completions
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+line_delete_tail_space -i .bash_history
+sort .bash_history -u > bash_history.unique
