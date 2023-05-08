@@ -123,5 +123,5 @@ c() {
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-line_delete_tail_space -i .bash_history
-sort .bash_history -u > bash_history.unique
+line_delete_tail_space -i ~/.bash_history
+sort ~/.bash_history -u > ~/.bash_history.unique
