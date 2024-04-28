@@ -28,20 +28,11 @@ cdls() {
 }
 alias cd='cdls'
 
-# for enable the ch in Emacs
-alias emacszh="export LC_CTYPE=zh_CN.UTF-8;/usr/bin/emacs";
-alias es="emacs -nw";
-
 alias q='cd ..'
-alias ,,='cd ../..'
-alias ,,,='cd ../../..'
-alias ,,,,='cd ../../../..'
-alias ,,,,,='cd ../../../../..'
-alias ,,,,,,='cd ../../../../../..'
-alias ,,,,,,,='cd ../../../../../../..'
-alias ,,,,,,,,='cd ../../../../../../../..'
-alias ,,,,,,,,,='cd ../../../../../../../../..'
-alias ,,,,,,,,,,='cd ../../../../../../../../../..'
+alias qq='cd ../..'
+alias qqq='cd ../../..'
+alias qqqq='cd ../../../..'
+alias qqqqq='cd ../../../../..'
 alias q!='exit'
 alias p='cd -'
 

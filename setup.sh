@@ -35,34 +35,20 @@ $gnu_ln --version > /dev/null
 
 DOT_TOP=$(realpath $(dirname $BASH_SOURCE))
 
-banner "Setup bash configuration"
+banner "Create soft links..."
+files=(bash_profile bashrc bash_aliases bash_completions bash_text vimrc vim)
 
-msg "Create soft link to .bashrc"
-$gnu_ln -sfb -T $DOT_TOP/bash_profile ~/.bash_profile
+for v in "${files[@]}"
+do
+  msg "Create soft link to .$v"
+  $gnu_ln -sfb -T $DOT_TOP/$v ~/.$v
+done
 
-msg "Create soft link to .bashrc"
-$gnu_ln -sfb -T $DOT_TOP/bashrc ~/.bashrc
-
-msg "Create soft link to .bash_aliases"
-$gnu_ln -sfb -T $DOT_TOP/bash_aliases ~/.bash_aliases
-
-msg "Create soft link to .bash_completions"
-$gnu_ln -sfb -T $DOT_TOP/bash_completions ~/.bash_completions
-
-echo ""
-banner "Setup vim configuration"
-
-msg "Create soft link to .vimrc"
-$gnu_ln -sfb -T $DOT_TOP/vimrc ~/.vimrc
-
-msg "Create soft link to .vim"
-$gnu_ln -sfb -T $DOT_TOP/vim ~/.vim
-
-msg "Install Vundle from GitHub"
+banner "Install Vundle from GitHub"
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-msg "Install Plugin"
+banner "Install Vim Plugins"
 vim +PluginInstall +qall
 
-msg "Install fzf"
+banner "Install fzf"
 bash $DOT_TOP/vim/bundle/fzf/install

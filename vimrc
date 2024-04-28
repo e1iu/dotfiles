@@ -59,7 +59,8 @@ Plugin 'tpope/vim-fugitive'
 " A tree explorer plugin for vim.
 Plugin 'preservim/nerdtree.git'
 
-" A light and configurable statusline/tabline plugin for Vim
+" A light and configurable Vim plugin for the_silver_searcher (ag) or ack -- a
+" wicked fast grepstatusline/tabline plugin for Vim
 Plugin 'itchyny/lightline.vim'
 
 " Vim script for text filtering and alignment
@@ -82,6 +83,9 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
+
+" Vim plugin for the_silver_searcher (ag) or ack -- a wicked fast grep
+Plugin 'mileszs/ack.vim'
 
 " Molokai color scheme for Vim
 Plugin 'tomasr/molokai'
