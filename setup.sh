@@ -36,7 +36,7 @@ $gnu_ln --version > /dev/null
 DOT_TOP=$(realpath $(dirname $BASH_SOURCE))
 
 banner "Create soft links..."
-files=(bash_profile bashrc bash_aliases bash_completions bash_text vimrc vim)
+files=(bash_profile bashrc bash_aliases bash_completions bash_text vimrc vim gitconfig)
 
 for v in "${files[@]}"
 do
@@ -45,7 +45,9 @@ do
 done
 
 banner "Install Vundle from GitHub"
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+fi
 
 banner "Install Vim Plugins"
 vim +PluginInstall +qall

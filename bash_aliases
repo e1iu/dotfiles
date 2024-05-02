@@ -38,3 +38,5 @@ alias p='cd -'
 
 alias vif='vim $(fzf)'
 alias vimf='vif'
+
+alias mysudo='sudo -E env "PATH=$PATH"'

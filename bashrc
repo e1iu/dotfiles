@@ -54,10 +54,7 @@ esac
 # enable color support of ls and also add handy aliases
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-
 ################### Some useful scripts ###################
-
-[[ -s ~/.bash_text ]] && source ~/.bash_text
 
 copy() {
   case "$(uname)" in
@@ -79,6 +76,11 @@ c() {
   fi
 }
 
+# Scripts for text
+[[ -s ~/.bash_text ]] && source ~/.bash_text
+
+# Scripts in testing
+[[ -s ~/.bash_test ]] && source ~/.bash_test
 
 [[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s ~/.bash_envs ]] && source ~/.bash_envs

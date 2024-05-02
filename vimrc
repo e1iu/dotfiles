@@ -45,7 +45,7 @@ let g:fzf_layout = { 'window': 'bot'.float2nr(&lines * 0.4).'new' }
 Plugin 'ekalinin/Dockerfile.vim'
 
 " Personal plugin for OpenJDK project.
-Plugin 'theRealELiu/openjdk-ad.vim'
+Plugin 'e1iu/openjdk-ad.vim'
 
 " Uncover usage problems in your writing
 Plugin 'reedes/vim-wordy'
@@ -284,8 +284,8 @@ autocmd InsertEnter,InsertLeave * set cul!
 
 " Open file at the same line
 " https://stackoverflow.com/a/775918/5262383
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+autocmd BufWinLeave . mkview
+autocmd BufWinEnter . silent loadview
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
