@@ -7,10 +7,8 @@
 "     -> General settings
 "     -> Key mappings
 "     -> Autocmd
-"     -> Misc
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
@@ -104,12 +102,14 @@ filetype plugin indent on    " required
 " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
 " see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set the default shell for :term
+set shell=/bin/bash
+
 " Set to auto read when a file is changed from the outside
 set autoread
 
@@ -196,7 +196,6 @@ set noshowmode
 
 " Enable enhanced mode in command-line completion
 set wildmenu
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mappings

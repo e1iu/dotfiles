@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# DOTFILE_VIM_TOP=$(realpath $(dirname $BASH_SOURCE))
-
 banner "Vim setup"
 files=(vim vimrc)
 
