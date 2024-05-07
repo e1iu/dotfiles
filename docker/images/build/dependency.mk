@@ -1,0 +1,5 @@
+define GENERATE_IMAGE
+$(call GENERATE_IMAGE_DEPENDENCY,$1,$2)
+endef
+
+.PHONY: $(IMGS)

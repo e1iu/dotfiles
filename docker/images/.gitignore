@@ -1,0 +1,6 @@
+*
+!*/
+!*.*
+*.dockerbuild
+*.dockerfile.generated
+images-dependency.*

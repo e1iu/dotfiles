@@ -79,14 +79,8 @@ c() {
 # Scripts for text
 [[ -s ~/.bash_text ]] && source ~/.bash_text
 
-# Scripts in testing
-[[ -s ~/.bash_test ]] && source ~/.bash_test
-
 [[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
 [[ -s ~/.bash_envs ]] && source ~/.bash_envs
 [[ -s ~/.bash_completions ]] && source ~/.bash_completions
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-line_delete_tail_space -i ~/.bash_history
-sort ~/.bash_history -u > ~/.bash_history.unique

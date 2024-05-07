@@ -1,6 +1,6 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:
-"       Eric Liu — @e1iu
+"       Eric Liu — qc1iuone AT outlook.com
 "
 " Sections:
 "     -> Plugins
@@ -286,10 +286,3 @@ autocmd InsertEnter,InsertLeave * set cul!
 " https://stackoverflow.com/a/775918/5262383
 autocmd BufWinLeave . mkview
 autocmd BufWinEnter . silent loadview
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Misc
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-execute "set rtp+=" . g:opamshare . "/merlin/vim"

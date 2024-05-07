@@ -1,0 +1,3 @@
+define GENERATE_IMAGE
+$(call GENERATE_TIMESTAMP,$1)
+endef

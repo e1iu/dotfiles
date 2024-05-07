@@ -1,0 +1,3 @@
+define GENERATE_IMAGE
+$(call GENERATE_REAL_IMAGE,$1,$2,$3)
+endef
