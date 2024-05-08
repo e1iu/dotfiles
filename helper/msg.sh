@@ -49,6 +49,7 @@ banner () {
 }
 
 # Export functions.
+export -f _is_interactive
 export -f _msg_prefix 
 export -f msg
 export -f dbg

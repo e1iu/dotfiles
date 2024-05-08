@@ -8,11 +8,11 @@ do
   safe ln -sfb -T $DOTFILE_VIM/$v ~/.$v
 done
 
-banner "Install Vundle from GitHub"
-git clone https://github.com/VundleVim/Vundle.vim.git $DOTFILE_VIM/vim/bundle/Vundle.vim
+banner "Install Vundle from Gitee"
+safe git clone https://gitee.com/e1iu/Vundle.vim.git $DOTFILE_VIM/vim/bundle/Vundle.vim
 
 banner "Install Vim Plugins"
-vim +PluginInstall +qall
+safe vim +PluginInstall +qall
 
 banner "Install fzf"
-bash $DOTFILE_VIM/vim/bundle/fzf/install
+safe bash $DOTFILE_VIM/vim/bundle/fzf/install

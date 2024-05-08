@@ -25,4 +25,5 @@ export DOTFILE_DOCKER
 # Include helpers.
 . "$DOTFILE_HELPER/msg.sh"
 . "$DOTFILE_HELPER/run.sh"
+. "$DOTFILE_HELPER/miscutils.sh"
 . "$DOTFILE_DOCKER/docker.sh"

@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-. $DOTFILE_BASH/setup.sh
-. $DOTFILE_VIM/setup.sh
+safe bash $DOTFILE_BASH/setup.sh
+safe bash $DOTFILE_VIM/setup.sh
