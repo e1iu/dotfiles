@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 banner "Bash setup"
-files=(bash_profile bashrc bash_aliases bash_completions bash_text)
+files=(bash_profile bashrc bash_aliases)
 
 for v in "${files[@]}"
 do

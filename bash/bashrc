@@ -54,11 +54,12 @@ esac
 # enable color support of ls and also add handy aliases
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-# Scripts for text
-[[ -s ~/.bash_text ]] && source ~/.bash_text
-
+# Define aliases.
 [[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
-[[ -s ~/.bash_envs ]] && source ~/.bash_envs
-[[ -s ~/.bash_completions ]] && source ~/.bash_completions
 
+# Define environment variables.
+[[ -s ~/.bash_envs ]] && source ~/.bash_envs
+
+# fzf/install script will add this line to modify $PATH and set up shell
+# integration. For more information, see: https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
