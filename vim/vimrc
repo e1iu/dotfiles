@@ -40,9 +40,6 @@ call vundle#begin()
   " Vim syntax file & snippets for Docker's Dockerfile
   Plugin 'https://gitee.com/e1iu/Dockerfile.vim'
 
-  " Personal plugin for OpenJDK project.
-  Plugin 'https://gitee.com/e1iu/openjdk-ad.vim'
-
   " Uncover usage problems in your writing
   Plugin 'https://gitee.com/e1iu/vim-wordy'
 
@@ -51,9 +48,6 @@ call vundle#begin()
 
   " fugitive.vim: A Git wrapper so awesome, it should be illegal
   Plugin 'https://gitee.com/e1iu/vim-fugitive'
-
-  " A tree explorer plugin for vim.
-  Plugin 'https://gitee.com/e1iu/nerdtree.git'
 
   " A light and configurable statusline/tabline plugin for Vim
   Plugin 'https://gitee.com/e1iu/lightline.vim'
@@ -199,12 +193,6 @@ inoremap  <Down>  <Nop>
 inoremap  <Left>  <Nop>
 inoremap  <Right> <Nop>
 
-" Quick tabprevious on terminal mode
-tnoremap gt <C-w>:tabprevious<CR>
-
-"	Go to Terminal-Normal mode.
-tnoremap jk <C-w>N<CR>
-
 " Quicker change to normal mode
 inoremap jk <Esc>
 
@@ -242,9 +230,6 @@ nnoremap  <Leader>q :q!<CR>
 
 " Quick save.
 nnoremap  <Leader>w :w!<CR>
-
-" Quick open and close NERDTree
-nnoremap <F3> <Esc>:NERDTreeToggle<CR>
 
 " Quick open and close Tagbar
 nnoremap <F12> <Esc>:TagbarToggle<CR>
