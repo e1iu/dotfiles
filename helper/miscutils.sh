@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-copy() {
+_copy() {
   case "$(uname)" in
     Darwin*)
       pbcopy ;;
@@ -14,9 +14,9 @@ copy() {
 
 c() {
   if [ $# -eq 0 ]; then
-    tee >(content="$(cat)"; echo -n "$content" | copy)
+    tee >(content="$(cat)"; echo -n "$content" | _copy)
   else
-    "$@" | tee >(content="$(cat)"; echo -n "$content" | copy)
+    "$@" | tee >(content="$(cat)"; echo -n "$content" | _copy)
   fi
 }
 

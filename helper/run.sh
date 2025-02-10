@@ -1,24 +1,5 @@
 #!/usr/bin/env bash
 
-# Check if a function/alias/command is installed.
-# installed [-q] <command>
-# -q : no debug message will be printed.
-installed () {
-  if [ "$1" = "-q" ] ; then
-    local quiet=true
-    shift
-  else
-    local quiet=false
-  fi
-  if type $1 >/dev/null 2>&1 ; then
-    $quiet || msg $1 is installed
-    return 0
-  else
-    $quiet || msg $1 is not installed
-    return 1
-  fi
-}
-
 # run [-q] [-c] [command [args ...]]
 # -q : no debug message will be printed.
 # -c : eval '[command [args ...]]' instead of run them directly.
@@ -89,7 +70,6 @@ safe () {
 }
 
 # Export functions.
-export -f installed
 export -f run
 export -f push_fault_handler
 export -f pop_fault_handler
