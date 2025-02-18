@@ -40,9 +40,6 @@ call vundle#begin()
   " Vim syntax file & snippets for Docker's Dockerfile
   Plugin 'https://gitee.com/e1iu/Dockerfile.vim'
 
-  " Uncover usage problems in your writing
-  Plugin 'https://gitee.com/e1iu/vim-wordy'
-
   " surround.vim: quoting/parenthesizing made simple
   Plugin 'https://gitee.com/e1iu/vim-surround'
 
@@ -206,13 +203,16 @@ cnoremap <C-e> <End>
 " Go to head-of-line
 cnoremap <C-a> <Home>
 
-" Make fzf performs more like CtrlP
-nnoremap <C-p> :Files<CR>
+" Shortcut key for fzf
+" NOTE: <C-p> would not work correctly in docker container which is in tmux.
+"       In such situation, <C-p><C-p> maps to <C-p> with unknown reason.
+" nnoremap <C-p> :Files<CR>
+nnoremap <Leader>f :Files<CR>
 
-" Shortcut key for fzf, to change buffer by fuzzing search
+" Shortcut key for fzf
 nnoremap <Leader>b :Buffers<CR>
 
-" Shortcut key for fzf, v:oldfiles and open buffers
+" Shortcut key for fzf
 nnoremap <Leader>h :History<CR>
 
 " Shortcut for opening terminal in a new tab
