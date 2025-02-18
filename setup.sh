@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
-banner "Bash setup"
-_bash_files=(bash_profile bashrc bash_aliases)
-
 _ln=ln
-if [ "$(uname)" == Darwin* ]; then
+if [ "$(uname)" = Darwin ]; then
   _ln=gln
 fi
+
+safe ${_ln} -sfb -T $DOTFILE_TOP/tmux.conf ~/.tmux.conf
+
+banner "Bash setup"
+_bash_files=(bash_profile bashrc bash_aliases)
 
 for f in "${_bash_files[@]}"
 do
