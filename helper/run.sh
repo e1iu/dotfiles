@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+# Check if a function/alias/command is installed.
+# installed <command>
+installed () {
+  if type $1 >/dev/null 2>&1 ; then
+    return 0
+  else
+    msg $1 is not installed
+    return 1
+  fi
+}
+
 # run [-q] [-c] [command [args ...]]
 # -q : no debug message will be printed.
 # -c : eval '[command [args ...]]' instead of run them directly.
@@ -70,9 +81,10 @@ safe () {
 }
 
 # Export functions.
-export -f run
+export -f installed
 export -f push_fault_handler
 export -f pop_fault_handler
+export -f run
 export -f safe
 
 # Bash completion.

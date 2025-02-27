@@ -2,6 +2,7 @@
 
 _ln=ln
 if [ "$(uname)" = Darwin ]; then
+  safe installed gln
   _ln=gln
 fi
 
@@ -36,5 +37,7 @@ banner "Install fzf"
 safe bash $DOTFILE_TOP/vim/bundle/fzf/install
 
 banner "Tmux setup"
+safe git submodule init
+safe git submodule update
 safe ${_ln} -sfb -T $DOTFILE_TOP/.tmux/.tmux.conf ~/.tmux.conf
 safe ${_ln} -sfb -T $DOTFILE_TOP/.tmux/.tmux.conf.local ~/.tmux.conf.local
