@@ -34,3 +34,7 @@ safe vim +PluginInstall +qall
 # fzf/install script will download fzf from https://github.com/junegunn/fzf/releases
 banner "Install fzf"
 safe bash $DOTFILE_TOP/vim/bundle/fzf/install
+
+banner "Tmux setup"
+safe ${_ln} -sfb -T $DOTFILE_TOP/.tmux/.tmux.conf ~/.tmux.conf
+safe ${_ln} -sfb -T $DOTFILE_TOP/.tmux/.tmux.conf.local ~/.tmux.conf.local

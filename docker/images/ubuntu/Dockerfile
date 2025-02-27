@@ -11,7 +11,7 @@ RUN true \
   \
   && echo "===== Install some common packages" \
   && apt-get -y install apt-utils dialog bash-completion sudo \
-        vim zip curl command-not-found patch wget iputils-ping lsb-release \
+        zip curl command-not-found patch wget iputils-ping lsb-release \
   \
   && echo "===== Install net and ip tools to ease the pain of deployment debug" \
   && apt-get -y install net-tools iproute2 \
@@ -19,8 +19,11 @@ RUN true \
   && echo "===== Install git" \
   && apt-get -y install git \
   \
+  && echo "===== Install vim and tmux" \
+  && apt-get -y install vim tmux\
+  \
   && echo "===== Install ssh and configure for remote connection" \
-  && apt-get -y install ssh \
+  && apt-get -y install ssh openssh-server\
   \
   && echo "===== Install build-essential for building sources" \
   && apt-get -y install build-essential \

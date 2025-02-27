@@ -1,0 +1,3 @@
+[submodule ".tmux"]
+	path = .tmux
+	url = https://gitee.com/e1iu/.tmux.git
