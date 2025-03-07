@@ -1,3 +1,0 @@
-[submodule ".tmux"]
-	path = .tmux
-	url = https://github.com/e1iu/.tmux.git
