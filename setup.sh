@@ -6,10 +6,10 @@ if [ "$(uname)" = Darwin ]; then
   _ln=gln
 fi
 
-safe ${_ln} -sfb -T $DOTFILE_TOP/tmux.conf ~/.tmux.conf
+safe ${_ln} -sfb -T $DOTFILE_TOP/gitconfig ~/.gitconfig
 
 banner "Bash setup"
-_bash_files=(bash_profile bashrc bash_aliases)
+_bash_files=(bash_profile bashrc bash_aliases bash_envs)
 
 for f in "${_bash_files[@]}"
 do

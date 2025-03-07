@@ -204,16 +204,13 @@ cnoremap <C-e> <End>
 cnoremap <C-a> <Home>
 
 " Shortcut key for fzf
-" NOTE: <C-p> would not work correctly in docker container which is in tmux.
-"       In such situation, <C-p><C-p> maps to <C-p> with unknown reason.
+" NOTE: <C-p> would not work correctly in tmux when it's in docker container.
+"       In such situation, double <C-p> maps to <C-p> with unknown reason.
 " nnoremap <C-p> :Files<CR>
 nnoremap <Leader>f :Files<CR>
-
-" Shortcut key for fzf
 nnoremap <Leader>b :Buffers<CR>
-
-" Shortcut key for fzf
 nnoremap <Leader>h :History<CR>
+nnoremap <Leader>m :Marks<CR>
 
 " Shortcut for opening terminal in a new tab
 nnoremap <Leader>tt :tab ter<CR>

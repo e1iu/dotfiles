@@ -20,7 +20,7 @@ RUN true \
   && apt-get -y install git \
   \
   && echo "===== Install vim and tmux" \
-  && apt-get -y install vim tmux\
+  && apt-get -y install vim tmux exuberant-ctags\
   \
   && echo "===== Install ssh and configure for remote connection" \
   && apt-get -y install ssh openssh-server\
