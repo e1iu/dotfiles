@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Find the top dir of ci-scripts.
+# Find the top dir of dotfiles.
 DOTFILE_TOP=$(realpath $(dirname $BASH_SOURCE))
 
 # Helper folder.

@@ -13,73 +13,65 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Use Vundle to manage plugins.
-" see :h vundle for more details or wiki for FAQ
-set nocompatible              " be iMproved, required
-filetype off                  " required
 
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Keep Plugin commands between vundle#begin/end.
-call vundle#begin()
-  " let Vundle manage Vundle, required
-  Plugin 'https://gitee.com/e1iu/Vundle.vim.git'
+call plug#begin()
+  " See https://junegunn.github.io/vim-plug/example/ for help.
+  " Make sure you use single quotes
 
   " A command-line fuzzy finder
-  " Using Vundle to manage the fzf source.
-  " See https://vi.stackexchange.com/questions/13718/how-to-install-fzf-vim-with-vundle
-  Plugin 'https://gitee.com/e1iu/fzf.git'
+  Plug 'https://gitee.com/e1iu/fzf.git', {'do' : './install --all'}
 
-  Plugin 'https://gitee.com/e1iu/fzf.vim'
+  Plug 'https://gitee.com/e1iu/fzf.vim'
   " Using a terminal buffer instead of raw terminal outputting.
-  " 80% of screen estate
-  " See https://github.com/junegunn/fzf.vim/issues/869
+  " 80% of screen estate. See https://github.com/junegunn/fzf.vim/issues/869
   let g:fzf_layout = { 'window': 'bot'.float2nr(&lines * 0.8).'new' }
 
   " Vim syntax file & snippets for Docker's Dockerfile
-  Plugin 'https://gitee.com/e1iu/Dockerfile.vim'
+  Plug 'https://gitee.com/e1iu/Dockerfile.vim'
 
   " surround.vim: quoting/parenthesizing made simple
-  Plugin 'https://gitee.com/e1iu/vim-surround'
+  Plug 'https://gitee.com/e1iu/vim-surround'
 
   " fugitive.vim: A Git wrapper so awesome, it should be illegal
-  Plugin 'https://gitee.com/e1iu/vim-fugitive'
+  Plug 'https://gitee.com/e1iu/vim-fugitive'
 
   " A light and configurable statusline/tabline plugin for Vim
-  Plugin 'https://gitee.com/e1iu/lightline.vim'
+  Plug 'https://gitee.com/e1iu/lightline.vim'
 
   " Vim script for text filtering and alignment
   " NOTE: The tabular plugin must come before vim-markdown.
   "       See https://github.com/plasticboy/vim-markdown
-  Plugin 'https://gitee.com/e1iu/tabular'
+  Plug 'https://gitee.com/e1iu/tabular'
 
   " Markdown Vim Mode
-  Plugin 'https://gitee.com/e1iu/vim-markdown'
+  Plug 'https://gitee.com/e1iu/vim-markdown'
   let g:vim_markdown_folding_disabled = 1
 
-  " Extra highlighting of typedefs, enumerations etc (based on ctags)
-  " Plugin 'vim-scripts/TagHighlight'
-
   " Vim plugin that displays tags in a window, ordered by scope
-  Plugin 'https://gitee.com/e1iu/tagbar'
+  Plug 'https://gitee.com/e1iu/tagbar'
 
   " Additional Vim syntax highlighting for C++ (including C++11/14/17)
-  Plugin 'https://gitee.com/e1iu/vim-cpp-enhanced-highlight'
+  Plug 'https://gitee.com/e1iu/vim-cpp-enhanced-highlight'
   let g:cpp_class_scope_highlight = 1
   let g:cpp_member_variable_highlight = 1
   let g:cpp_class_decl_highlight = 1
 
   " Vim plugin for the_silver_searcher (ag) or ack -- a wicked fast grep
-  Plugin 'https://gitee.com/e1iu/ack.vim'
+  Plug 'https://gitee.com/e1iu/ack.vim'
   let g:ackhighlight = 1
 
   " Molokai color scheme for Vim
-  Plugin 'https://gitee.com/e1iu/molokai'
-call vundle#end()
+  Plug 'https://gitee.com/e1iu/molokai'
 
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use: filetype plugin on
+  " .tmux is not a vim plugin. Manage it by vim just for fun.
+  Plug 'https://gitee.com/e1iu/.tmux', {'branch' : 'chuan'}
+
+  " Call plug#end to update &runtimepath and initialize the plugin system.
+  " - It automatically executes `filetype plugin indent on` and `syntax enable`
+  " You can revert the settings after the call like so:
+  "   filetype indent off   " Disable file-type-specific indentation
+  "   syntax off            " Disable syntax highlighting
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General settings

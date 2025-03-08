@@ -54,21 +54,21 @@ esac
 # enable color support of ls and also add handy aliases
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-# Environment variable definitions. E.g., put brew in PATH for Darwin.
-[[ -s ~/.bash_envs ]] && source ~/.bash_envs
+# Customized environment variable. E.g., the brew PATH in Darwin.
+[ -s ~/.bash_envs ] && source ~/.bash_envs
 
 # Enable bash completion
 if [ "$(uname)" = Darwin ]; then
   # We assume brew has been in PATH.
   if [ -f $(brew --prefix)/etc/bash_completion ]; then
-      . $(brew --prefix)/etc/bash_completion
+      source $(brew --prefix)/etc/bash_completion
   fi
 else
   [[ -s /etc/bash_completion ]] && source /etc/bash_completion
 fi
 
 # Alias definitions.
-[[ -s ~/.bash_aliases ]] && source ~/.bash_aliases
+[ -s ~/.bash_aliases ] && source ~/.bash_aliases
 
 # fzf/install script will add this line to modify $PATH and set up shell
 # integration. For more information, see: https://github.com/junegunn/fzf
