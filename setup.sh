@@ -2,14 +2,14 @@
 
 _ln=ln
 if [ "$(uname)" = Darwin ]; then
-  safe installed gln
+  safe -q installed gln
   _ln=gln
 fi
 
 safe $_ln -sfb -T $DOTFILE_TOP/gitconfig ~/.gitconfig
 
 banner "Bash setup"
-_bash_files=(bash_profile bashrc bash_aliases bash_envs)
+_bash_files=(bash_profile bashrc bash_aliases)
 
 for f in "${_bash_files[@]}"
 do
@@ -33,20 +33,18 @@ do
   safe $_ln -sfb -T $DOTFILE_TOP/$f ~/.$f
 done
 
-_vim_bundle_dir=$DOTFILE_TOP/vim/bundle
-if [ ! -d  $_vim_bundle_dir ]; then
-  banner "Install Vundle from Gitee"
-  safe git clone https://gitee.com/e1iu/Vundle.vim.git $_vim_bundle_dir/Vundle.vim
+_vim_plug=$DOTFILE_TOP/vim/autoload/plug.vim
+if [ ! -f $_vim_plug ]; then
+  banner "Download plug.vim from Gitee"
+  safe curl -fLo $_vim_plug --create-dirs \
+    https://gitee.com/e1iu/vim-plug/raw/master/plug.vim
 fi
 
-banner "Install Vim Plugins"
-safe vim +PluginInstall +qall
+banner "Install vim plugins"
+safe vim +PlugInstall +qall
 
-# fzf/install script will download fzf from https://github.com/junegunn/fzf/releases
-banner "Install fzf"
-safe bash $_vim_bundle_dir/fzf/install
+_vim_plugged_dir=$DOTFILE_TOP/vim/plugged
 
-banner "Tmux setup"
-safe git clone --depth 1 --branch chuan https://gitee.com/e1iu/.tmux.git $DOTFILE_TOP/.tmux
-safe $_ln -sfb -T $DOTFILE_TOP/.tmux/.tmux.conf ~/.tmux.conf
-safe $_ln -sfb -T $DOTFILE_TOP/.tmux/.tmux.conf.local ~/.tmux.conf.local
+banner "Tmux config"
+safe $_ln -sfb -T $_vim_plugged_dir/.tmux/.tmux.conf ~/.tmux.conf
+safe $_ln -sfb -T $_vim_plugged_dir/.tmux/.tmux.conf.local ~/.tmux.conf.local

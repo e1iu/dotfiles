@@ -24,6 +24,7 @@ docker run                                                          \
     --init                                                          \
     --detach                                                        \
     --shm-size=4g                                                   \
+    --publish 22222:22                                              \
     --name ${container_name}                                        \
     --mount type=bind,source=${mount_source},target=${mount_target} \
     --workdir ${mount_target}                                       \
