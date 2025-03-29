@@ -19,7 +19,7 @@ call plug#begin()
   " Make sure you use single quotes
 
   " A command-line fuzzy finder
-  Plug 'https://gitee.com/e1iu/fzf.git', {'do' : './install --all'}
+  Plug 'https://gitee.com/e1iu/fzf.git', {'do' : './install --bin'}
 
   Plug 'https://gitee.com/e1iu/fzf.vim'
   " Using a terminal buffer instead of raw terminal outputting.
