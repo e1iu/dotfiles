@@ -44,7 +44,7 @@ call plug#begin()
   Plug 'https://gitee.com/e1iu/tabular'
 
   " Markdown Vim Mode
-  Plug 'https://gitee.com/e1iu/vim-markdown'
+  Plug 'https://github.com/preservim/vim-markdown.git'
   let g:vim_markdown_folding_disabled = 1
 
   " Vim plugin that displays tags in a window, ordered by scope
@@ -203,28 +203,22 @@ nnoremap <Leader>f :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader>h :History<CR>
 nnoremap <Leader>m :Marks<CR>
-
-" Shortcut for opening terminal in a new tab
-nnoremap <Leader>tt :tab ter<CR>
-
-" Show trailing whitespace
-" See https://vim.fandom.com/wiki/Highlight_unwanted_spaces
-nnoremap <Leader>tw /\s\+$<CR>
+nnoremap <Leader>t :Tags<CR>
 
 " Opens current buffer in new tab page
 nnoremap <Leader>s :tab split<CR>
 
 " Quick exit
-nnoremap  <Leader>q :q!<CR>
+nnoremap <Leader>q :q!<CR>
 
 " Quick save.
-nnoremap  <Leader>w :w!<CR>
-
-" Quick open and close Tagbar
-nnoremap <F12> <Esc>:TagbarToggle<CR>
+nnoremap <Leader>w :w!<CR>
 
 " Quick open Ack
 nnoremap <Leader>a <Esc>:Ack!<Space>
+
+" Quick open and close Tagbar
+nnoremap <F12> <Esc>:TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Autocmd
