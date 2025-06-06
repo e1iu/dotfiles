@@ -215,7 +215,7 @@ nnoremap <Leader>q :q!<CR>
 nnoremap <Leader>w :w!<CR>
 
 " Quick open Ack
-nnoremap <Leader>a <Esc>:Ack!<Space>
+nnoremap <Leader>a <Esc>:Ack! --ignore-file=is:tags<Space>
 
 " Quick open and close Tagbar
 nnoremap <F12> <Esc>:TagbarToggle<CR>
